@@ -52,14 +52,14 @@
     {{ content_for_header }}
 
     {{ 'app.css' | asset_url | stylesheet_tag }}
-  {% include 'pagefly-app-header' %}</head>
+  </head>
 
   <body id="{{ page_title | handle }}" class="template-{{ template.name | handle }}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
 
-    {%- sections 'header-group' -%}
+    <div style="display:none"> {%- sections 'header-group' -%} </div>
 
     <div id="app">
       <!-- 这里是你的 Vue 应用的内容 -->
