@@ -56,7 +56,9 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     {{ content_for_header }}
 
     {{ 'app.css' | asset_url | stylesheet_tag }}
-  {% include 'pagefly-app-header' %}</head>
+  {% include 'pagefly-app-header' %}
+  {% render 'shogun-head' %}
+</head>
 
   <body id="{{ page_title | handle }}" class="template-{{ template.name | handle }}"><div class="pagefly-container">
               {{ content_for_layout }}
