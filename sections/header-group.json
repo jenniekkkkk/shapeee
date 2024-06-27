@@ -38,7 +38,7 @@
     "header-navbar": {
       "type": "header-navbar",
       "settings": {
-        "announcement_bar_enabled": false,
+        "announcement_bar_enabled": true,
         "announcement_bar_home_page_only": true,
         "announcement_bar_text": "Announce something here",
         "announcement_bar_link": "",
