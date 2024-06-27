@@ -37,13 +37,14 @@
     },
     "header-navbar": {
       "type": "header-navbar",
+      "disabled": true,
       "settings": {
         "announcement_bar_enabled": false,
         "announcement_bar_home_page_only": true,
         "announcement_bar_text": "Announce something here",
         "announcement_bar_link": "",
         "logo": "shopify:\/\/shop_images\/coffee-and-cake.jpg",
-        "logo_max_width": 72,
+        "logo_max_width": 124,
         "menu": "main-menu"
       }
     }
