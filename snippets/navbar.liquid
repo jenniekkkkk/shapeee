@@ -1,18 +1,14 @@
-{% comment %} <nav class="navbar navbar-expand-lg navbar-light bg-light">  {% endcomment %}
-  {% comment %} <div class="container"> {% endcomment %}
-    {% comment %} <a class="navbar-brand" href="#"> {% endcomment %}
-      {% comment %} <img {% endcomment %}
-        {% comment %} src="{{section.settings.logo | image_url:'master' }}" {% endcomment %}
-        {% comment %} alt="" {% endcomment %}
-        {% comment %} width="{{section.settings.logo_max_width}}px" {% endcomment %}
-        {% comment %} height="" {% endcomment %}
-      {% comment %} > {% endcomment %}
-    {% comment %} </a> {% endcomment %}
-  <nav class="navbar navbar-light bg-light"> 
-      <a class="navbar-brand" href="#">
-        <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
-      </a>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img
+        src="{{section.settings.logo | image_url:'master' }}"
+        alt=""
+        width="{{section.settings.logo_max_width}}px"
+        height=""
+      >
+    </a>
+
     <button
       class="navbar-toggler"
       type="button"
