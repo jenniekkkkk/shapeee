@@ -15015,6 +15015,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var vm = new Vue({
+  el: '#app'
+});
 
 /***/ }),
 
