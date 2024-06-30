@@ -52,9 +52,7 @@
     {{ content_for_header }}
 
     {{ 'app.css' | asset_url | stylesheet_tag }}
-  {% include 'pagefly-app-header' %}
-  {% render 'shogun-head' %}
-</head>
+  </head>
 
   <body id="{{ page_title | handle }}" class="template-{{ template.name | handle }}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
