@@ -97,3 +97,72 @@
     {% endif %}
   </div>
 {% endpaginate %}
+
+{% schema %}
+{
+  "name": "collection",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Collection header"
+    },
+    {
+      "type": "checkbox",
+      "id": "is_full_width",
+      "label": "Full width",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "header_align",
+      "options": [
+        {
+          "value": "right",
+          "label": "Text right"
+        },
+        {
+          "value": "left",
+          "label": "Text left"
+        }
+      ],
+      "label": "Header alignment",
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "header_height",
+      "min": 50,
+      "max": 500,
+      "step": 5,
+      "unit": "px",
+      "label": "Header height",
+      "default": 120
+    },
+    {
+      "type": "header",
+      "content": "Sidebar"
+    },
+    {
+      "type": "link_list",
+      "id": "collection_nav",
+      "label": "Nacigation",
+      "info": "Select custom menu nav for sidebar"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_tags",
+      "label": "Hide tags",
+      "default": false,
+      "info": "Hide tags from sidebar"
+    },
+    {
+      "type": "header",
+      "content": "Others"
+    },
+    {
+      "type": "paragraph",
+      "content": "You can add more settings here :)"
+    }
+  ]
+}
+{% endschema %}
