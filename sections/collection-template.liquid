@@ -75,7 +75,7 @@
                 <p>
                   <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
                 </p>
-                {% include 'product-price' %}
+                {% render 'product-price' %}
               </div>
             </div>
           {% endfor %}
