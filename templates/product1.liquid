@@ -36,7 +36,7 @@
                           {% assign variant_image_size =variant.image.width|append:'x' %}
                           "image":"http:{{variant.image.src|image_url:variant_image_size}}",
                       {% endif %}
-                      {% if variant_title !=blank %}
+                      {% if variant.title !=blank %}
                           "name":"{{variant.title|escape}}",
                       {% endif %}
                       {% if variant.weight !=blank %}
