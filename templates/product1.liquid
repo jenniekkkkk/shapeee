@@ -9,7 +9,7 @@
       {% if product.featured_image %}
           {% assign image_size=product.featured_image.width|append:'x' %}
           "image":[
-              "hettps:{{product.featured_image.src|img_url:image_size}}"
+              "hettps:{{product.featured_image.src|image_url:image_size}}"
           ],
       {% endif %}
       "description":"{{product.description|strip_html|escape}}"
@@ -20,7 +20,7 @@
           "@type":"Thing",
           "name":"{{product.vendor|escape}}"
       },
-      {% if product_variants %}
+      {% if product.variants %}
           "offers":[
           {% for variant in product.variants %}
               {
