@@ -19,6 +19,7 @@
       </option>
     {% endfor %}
   </select>
+
   <noscript>
     <select name="id">
       {% for variant in product.variants %}
@@ -57,7 +58,7 @@
           @click="addToCart"
           class="btn btn-primary"
           name="add"
-          data-submit-buttons=""
+          data-submit-button
           {% unless current_variant.avaliable %}
             disabled="disabed"
           {% endunless %}
