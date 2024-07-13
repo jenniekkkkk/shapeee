@@ -34,7 +34,7 @@
                       "@type":"Product",
                       {% if variant.image %}
                           {% assign variant_image_size =variant.image.width|append:'x' %}
-                          "image":"http:{{variant.image.src|img_url:variant_image_size}}",
+                          "image":"http:{{variant.image.src|image_url:variant_image_size}}",
                       {% endif %}
                       {% if variant_title !=blank %}
                           "name":"{{variant.title|escape}}",
