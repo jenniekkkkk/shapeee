@@ -39,9 +39,9 @@
                       {% if variant.title !=blank %}
                           "name":"{{variant.title|escape}}",
                       {% endif %}
-                      {% if variant.weight !=blank %}
-                          "sku":"{{variant.sku}}",
-                      {% endif %}
+                      {% if variant.sku !=blank %}
+                        "sku":"{{variant.sku}}",
+                    {% endif %}
                       {% if variant.weight !=blank %}
                           "weight":{
                               "@type":"QuantitativeValue",
