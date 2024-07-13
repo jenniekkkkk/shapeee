@@ -24,6 +24,9 @@
       "powered_by_shopify_html": "This shop will be powered by {{ shopify }}"
     },
     "social": {
+      "share_on_facebook": "Share on Facebook",
+      "share_on_twitter": "Share on X",
+      "share_on_pinterest": "Pin on Pinterest",
       "alt_text": {
         "share_on_facebook": "Share on Facebook",
         "share_on_twitter": "Share on X",
