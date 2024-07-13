@@ -24,51 +24,49 @@
       "powered_by_shopify_html": "This shop will be powered by {{ shopify }}"
     },
     "social": {
-      "alt_text": {
-        "share_on_facebook": "Share_on_Facebook",
-        "share_on_twitter": "Share on X",
-        "share_on_pinterest": "Pin on Pinterest"
-      },
-      "links": {
-        "twitter": "X (Twitter)",
-        "facebook": "Facebook",
-        "pinterest": "Pinterest",
-        "instagram": "Instagram",
-        "tumblr": "Tumblr",
-        "snapchat": "Snapchat",
-        "youtube": "YouTube",
-        "vimeo": "Vimeo",
-        "tiktok": "TikTok"
-      }
+      "share_on_facebook": "Share on Facebook",
+      "share_on_twitter": "Share on X",
+      "share_on_pinterest": "Pin on Pinterest"
     },
-    "continue_shopping": "Continue shopping",
-    "pagination": {
-      "label": "Pagination",
-      "page": "Page {{ number }}",
-      "next": "Next page",
-      "previous": "Previous page"
-    },
-    "search": {
-      "search": "Search",
-      "reset": "Clear search term"
-    },
-    "cart": {
-      "view": "View cart ({{ count }})",
-      "view_empty_cart": "View cart",
-      "item_added": "Item added to your cart"
-    },
-    "share": {
-      "close": "Close share",
-      "copy_to_clipboard": "Copy link",
-      "share_url": "Link",
-      "success_message": "Link copied to clipboard"
-    },
-    "slider": {
-      "of": "of",
-      "next_slide": "Slide right",
-      "previous_slide": "Slide left",
-      "name": "Slider"
+    "links": {
+      "twitter": "X (Twitter)",
+      "facebook": "Facebook",
+      "pinterest": "Pinterest",
+      "instagram": "Instagram",
+      "tumblr": "Tumblr",
+      "snapchat": "Snapchat",
+      "youtube": "YouTube",
+      "vimeo": "Vimeo",
+      "tiktok": "TikTok"
     }
+  },
+  "continue_shopping": "Continue shopping",
+  "pagination": {
+    "label": "Pagination",
+    "page": "Page {{ number }}",
+    "next": "Next page",
+    "previous": "Previous page"
+  },
+  "search": {
+    "search": "Search",
+    "reset": "Clear search term"
+  },
+  "cart": {
+    "view": "View cart ({{ count }})",
+    "view_empty_cart": "View cart",
+    "item_added": "Item added to your cart"
+  },
+  "share": {
+    "close": "Close share",
+    "copy_to_clipboard": "Copy link",
+    "share_url": "Link",
+    "success_message": "Link copied to clipboard"
+  },
+  "slider": {
+    "of": "of",
+    "next_slide": "Slide right",
+    "previous_slide": "Slide left",
+    "name": "Slider"
   },
   "newsletter": {
     "label": "Email",
