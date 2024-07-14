@@ -51,7 +51,6 @@
 
         <div data-price-wrapper class="my-2">
           <span data-product-price>
-            {% assign current_variant = product.selected_or_first_available_variant %}
             {{ current_variant.price | money }}
           </span>
 
