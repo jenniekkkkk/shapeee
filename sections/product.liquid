@@ -10,7 +10,7 @@
             {% for image in product.images %}
               <div>
                 <a
-                  href="{{ image.src | img_url: '480x480' }}"
+                  href="{{ image.src | img_url: '800x480' }}"
                   data-thumbnail-id="{{ image.id }}"
                   data-product-single-thumbnail
                   {% if featured_image == image %}
