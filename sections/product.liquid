@@ -6,28 +6,26 @@
         {% assign featured_image = current_variant.feature_image | default: product.featured_image %}
 
         <div class="product-slider">
-          {% if product.image.size >= 1 %}
-            {% for image in product.images %}
-              <div>
-                <a
-                  href="{{ image.src | img_url: '480x480' }}"
-                  data-thumbnail-id="{{ image.id }}"
-                  data-product-single-thumbnail
-                  {% if featured_image == image %}
-                    aria-current="true"
-                  {% endif %}
+          {% for image in product.images %}
+            <div>
+              <a
+                href="{{ image.src | img_url: '480x480' }}"
+                data-thumbnail-id="{{ image.id }}"
+                data-product-single-thumbnail
+                {% if product.featured_image == image %}
+                  aria-current="true"
+                {% endif %}
+              >
+                <img
+                  class="img-fluid"
+                  src="{{ image.src | img_url: '800x600', crop: 'center' }}"
+                  alt="{{ image.alt | escape }}"
+                  width="800"
+                  height="600"
                 >
-                  <img
-                    class="img-fluid"
-                    src="{{ image.src | img_url: '800x600', crop:'center' }}"
-                    alt="{{ image.alt | escape }}"
-                    width="800"
-                    height="600"
-                  >
-                </a>
-              </div>
-            {% endfor %}
-          {% endif %}
+              </a>
+            </div>
+          {% endfor %}
         </div>
         <div class="product-slider-nav mt-4">
           {% if product.images.size > 1 %}
