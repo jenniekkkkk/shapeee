@@ -9,7 +9,7 @@
           {% for image in product.images %}
             <div>
               <a
-                href="{{ image.src | image_url: '480x480' }}"
+                href="{{ image.src | img_url: '480x480' }}"
                 data-thumbnail-id="{{ image.id }}"
                 data-product-single-thumbnail
                 {% if product.featured_image == image %}
@@ -18,7 +18,7 @@
               >
                 <img
                   class="img-fluid"
-                  src="{{ image.src | image_url: '800x600', crop: 'center' }}"
+                  src="{{ image.src | img_url: '800x600', crop: 'center' }}"
                   alt="{{ image.alt | escape }}"
                   width="800"
                   height="600"
@@ -33,7 +33,7 @@
               <img
                 class="img-fluid px-3"
                 width="50"
-                src="{{ image.src | image_url: '200x150', crop:'center' }}"
+                src="{{ image.src | img_url: '200x150', crop:'center' }}"
                 alt="{{ image.alt | escape }}"
                 width="800"
                 height="600"
