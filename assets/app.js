@@ -15013,7 +15013,7 @@ __webpack_require__.r(__webpack_exports__);
 
 //import 'jquery';
 var jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-window.jQuery = window.$ = jQuery;
+window.jQuery = $ = jQuery;
 
 
 
