@@ -15031,16 +15031,14 @@ var vm = new Vue({
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! slick-carousel */ "./node_modules/slick-carousel/slick/slick.js");
-/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(slick_carousel__WEBPACK_IMPORTED_MODULE_1__);
-
+/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! slick-carousel */ "./node_modules/slick-carousel/slick/slick.js");
+/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(slick_carousel__WEBPACK_IMPORTED_MODULE_0__);
+//import $ from 'jquery';
 
 
 // 确保在文档准备好后初始化 Slick
 // 初始化主滑块
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('.product-slider').slick({
+$('.product-slider').slick({
   infinite: false,
   arrows: false,
   slidesToShow: 1,
@@ -15064,7 +15062,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.product-slider').slick({
 });
 
 // 初始化导航滑块
-jquery__WEBPACK_IMPORTED_MODULE_0___default()('.product-slider-nav').slick({
+$('.product-slider-nav').slick({
   infinite: true,
   arrows: false,
   slidesToShow: 3,
