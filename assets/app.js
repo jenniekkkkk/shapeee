@@ -15012,7 +15012,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _product__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./product */ "./src/js/product.js");
 
 //import Vue from 'vue/dist/vue.js';
-window.Vue = vue__WEBPACK_IMPORTED_MODULE_0__["default"];
+window.Vue = Vue;
 __webpack_require__(/*! ./components/ProductForm.js */ "./src/js/components/ProductForm.js");
 window.Noty = __webpack_require__(/*! noty */ "./node_modules/noty/lib/noty.js");
 
