@@ -15022,6 +15022,9 @@ window.axios = axios;
 
 
 
+var vm = new Vue({
+  el: '#app'
+});
 
 /***/ }),
 
