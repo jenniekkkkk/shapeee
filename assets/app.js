@@ -3019,12 +3019,11 @@ function withinMaxClamp(min, value, max) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue/dist/vue.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
-/* harmony import */ var _product__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./product */ "./src/js/product.js");
+/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
+/* harmony import */ var _product__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./product */ "./src/js/product.js");
 //import vue from 'vue';
-
-window.Vue = Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue/dist/vue.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+//import Vue from 'vue/dist/vue.js';
+window.Vue = Vue;
 __webpack_require__(/*! ./components/ProductForm.js */ "./src/js/components/ProductForm.js");
 window.Noty = __webpack_require__(/*! noty */ "./node_modules/noty/lib/noty.js");
 
@@ -3036,7 +3035,7 @@ window.axios = axios;
 
 
 
-var vm = new Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue/dist/vue.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())({
+var vm = new Vue({
   el: '#app'
 });
 
