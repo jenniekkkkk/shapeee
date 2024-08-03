@@ -20327,7 +20327,7 @@ if (document.querySelector('.shopify-product-form')) {
       return {
         form: {
           id: document.getElementById('variant_id').value,
-          quantity: 100
+          quantity: 1
         },
         available: true // This should be dynamically set based on product availability
       };
@@ -20360,15 +20360,8 @@ if (document.querySelector('.shopify-product-form')) {
         });
       },
       closeMiniCart: function closeMiniCart() {
-        // Logic to close the mini cart
-      },
-      checkAvailability: function checkAvailability() {
-        // Logic to check product availability and set this.available
-        this.available = document.querySelector('[data-available]').dataset.available === 'true';
+        // 关闭迷你购物车的逻辑
       }
-    },
-    mounted: function mounted() {
-      this.checkAvailability(); // Check availability on component mount
     }
   });
 }
