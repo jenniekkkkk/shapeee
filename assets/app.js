@@ -20320,62 +20320,64 @@ __webpack_require__(/*! ./components/ProductForm.js */ "./src/js/components/Prod
   \******************************************/
 /***/ (() => {
 
-if (document.querySelector('.shopify-product-form')) {
-  var productForm = new Vue({
-    el: '.shopify-product-form',
-    data: function data() {
-      return {
-        form: {
-          id: document.getElementById('variant_id').value,
-          quantity: 1
-        },
-        available: true // This should be dynamically set based on product availability
-      };
-    },
-    methods: {
-      addToCart: function addToCart() {
-        var _this = this;
-        if (!this.available) {
-          console.log('Product is not available');
-          return; // 如果不可用则返回
-        }
-        console.log('Attempting to add to cart:', this.form);
-        axios.post('/cart/add.js', this.form).then(function (response) {
-          console.log('Product added to cart:', response.data);
-          var found = store.state.cartData[0].items.find(function (product) {
-            return product.variant_id === response.data.variant_id;
-          });
-          if (found) {
-            // Logic for if the product is found in the cart
-          }
-          _this.closeMiniCart();
-          new Noty({
-            type: 'success',
-            timeout: 3000,
-            layout: 'topRight',
-            text: 'Product added to cart!'
-          }).show();
-          console.log('Success notification shown');
-        })["catch"](function (error) {
-          console.log('Error adding to cart:', error);
-          new Noty({
-            type: 'error',
-            layout: 'topRight',
-            text: 'Some notification text'
-          }).show();
-        });
+document.addEventListener('DOMContentLoaded', function () {
+  if (document.querySelector('.shopify-product-form')) {
+    var productForm = new Vue({
+      el: '.shopify-product-form',
+      data: function data() {
+        return {
+          form: {
+            id: document.getElementById('variant_id').value,
+            quantity: 1
+          },
+          available: true // This should be dynamically set based on product availability
+        };
       },
-      closeMiniCart: function closeMiniCart() {
-        // 关闭迷你购物车的逻辑
+      methods: {
+        addToCart: function addToCart() {
+          var _this = this;
+          if (!this.available) {
+            console.log('Product is not available');
+            return; // 如果不可用则返回
+          }
+          console.log('Attempting to add to cart:', this.form);
+          axios.post('/cart/add.js', this.form).then(function (response) {
+            console.log('Product added to cart:', response.data);
+            var found = store.state.cartData[0].items.find(function (product) {
+              return product.variant_id === response.data.variant_id;
+            });
+            if (found) {
+              // Logic for if the product is found in the cart
+            }
+            _this.closeMiniCart();
+            new Noty({
+              type: 'success',
+              timeout: 3000,
+              layout: 'topRight',
+              text: 'Product added to cart!'
+            }).show();
+            console.log('Success notification shown');
+          })["catch"](function (error) {
+            console.log('Error adding to cart:', error);
+            new Noty({
+              type: 'error',
+              layout: 'topRight',
+              text: 'Some notification text'
+            }).show();
+          });
+        },
+        closeMiniCart: function closeMiniCart() {
+          // 关闭迷你购物车的逻辑
+        }
+      },
+      mounted: function mounted() {
+        console.log('Component mounted, checking availability...');
+        this.available = document.querySelector('.shopify-product-form').dataset.available === 'true';
+        console.log('Availability:', this.available);
       }
-    },
-    mounted: function mounted() {
-      console.log('Component mounted, checking availability...');
-      this.available = document.querySelector('.shopify-product-form').dataset.available === 'true';
-      console.log('Availability:', this.available);
-    }
-  });
-}
+    });
+  }
+});
 
 /***/ }),
 
