@@ -32308,8 +32308,7 @@ __webpack_require__.r(__webpack_exports__);
 
 //const Vue = require('vue/dist/vue.js');
 //import vue from 'vue/dist/vue.js';
-window.Vue = Vue;
-__webpack_require__(/*! ./components/ProductForm.js */ "./src/js/components/ProductForm.js");
+window.Vue = vue__WEBPACK_IMPORTED_MODULE_0__["default"];
 window.Noty = __webpack_require__(/*! noty */ "./node_modules/noty/lib/noty.js");
 
 //import 'jquery';
@@ -32320,6 +32319,7 @@ window.axios = axios;
 
 
 
+__webpack_require__(/*! ./components/ProductForm.js */ "./src/js/components/ProductForm.js");
 
 /***/ }),
 
