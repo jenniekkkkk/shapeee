@@ -20327,7 +20327,7 @@ if (document.querySelector('.shopify-product-form')) {
       return {
         form: {
           id: document.getElementById('variant_id').value,
-          quantity: 1
+          quantity: 100
         },
         available: true // This should be dynamically set based on product availability
       };
