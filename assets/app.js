@@ -15044,7 +15044,7 @@ __webpack_require__.r(__webpack_exports__);
 
 document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelector('.shopify-product-form')) {
-    new vue__WEBPACK_IMPORTED_MODULE_0__["default"]({
+    new vue({
       el: '.shopify-product-form',
       data: function data() {
         return {
