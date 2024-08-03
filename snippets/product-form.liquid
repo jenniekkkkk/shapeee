@@ -10,7 +10,7 @@
         {% if variant == current_variant %}
           selected="selected"
         {% endif %}
-        {% unless variant.avaliable %}
+        {% unless variant.available %}
           disable="disable"
         {% endunless %}
         value="{{variant.id}}"
@@ -27,7 +27,7 @@
           {% if variant == current_variant %}
             selected="selected"
           {% endif %}
-          {% unless variant.avaliable %}
+          {% unless variant.available %}
             disabled="disable"
           {% endunless %}
           value="{{variant.id}}"
@@ -52,6 +52,7 @@
           min="1"
         >
       </div>
+
       <div class="col-md-6">
         <button
           type="button"
@@ -60,12 +61,12 @@
           class="btn btn-primary"
           name="add"
           data-submit-button
-          {% unless current_variant.avaliable %}
+          {% unless current_variant.available %}
             disabled="disabled"
           {% endunless %}
         >
           <span data-submit-button-text>
-            {% if current_variant.avaliable %}
+            {% if current_variant.available %}
               {{ 'products.product.add_to_cart' | t }}
             {% else %}
               {{ 'products.product.sold_out' | t }}
