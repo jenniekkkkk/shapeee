@@ -20292,13 +20292,14 @@ return jQuery;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue/dist/vue.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue/dist/vue.js */ "./node_modules/vue/dist/vue.js");
+/* harmony import */ var vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
 /* harmony import */ var _product__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./product */ "./src/js/product.js");
 //import Vue from 'vue';
 //const Vue = require('vue/dist/vue.js');
 
-window.Vue = Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue/dist/vue.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+window.Vue = (vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0___default());
 window.Noty = __webpack_require__(/*! noty */ "./node_modules/noty/lib/noty.js");
 
 //import 'jquery';
@@ -26768,6 +26769,16 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     };
 
 }));
+
+
+/***/ }),
+
+/***/ "./node_modules/vue/dist/vue.js":
+/*!**************************************!*\
+  !*** ./node_modules/vue/dist/vue.js ***!
+  \**************************************/
+/***/ (() => {
+
 
 
 /***/ }),
