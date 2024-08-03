@@ -32317,7 +32317,7 @@ window.axios = axios;
 
 
 
-var vm = new Vue({
+var vm = new vue__WEBPACK_IMPORTED_MODULE_0__["default"]({
   el: '#app'
 });
 
