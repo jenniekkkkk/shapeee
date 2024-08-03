@@ -20367,7 +20367,10 @@ document.addEventListener('DOMContentLoaded', function () {
           });
         },
         closeMiniCart: function closeMiniCart() {
-          // 关闭迷你购物车的逻辑
+          var miniCart = document.getElementById('mini-cart');
+          if (miniCart) {
+            miniCart.classList.add('hidden'); // 关闭迷你购物车的逻辑
+          }
         }
       },
       mounted: function mounted() {
