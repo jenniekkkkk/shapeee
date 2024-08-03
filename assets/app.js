@@ -20335,8 +20335,13 @@ if (document.querySelector('.shopify-product-form')) {
     methods: {
       addToCart: function addToCart() {
         var _this = this;
-        if (!this.available) return;
+        if (!this.available) {
+          console.log('Product is not available');
+          return; // 如果不可用则返回
+        }
+        console.log('Attempting to add to cart:', this.form);
         axios.post('/cart/add.js', this.form).then(function (response) {
+          console.log('Product added to cart:', response.data);
           var found = store.state.cartData[0].items.find(function (product) {
             return product.variant_id === response.data.variant_id;
           });
@@ -20350,8 +20355,9 @@ if (document.querySelector('.shopify-product-form')) {
             layout: 'topRight',
             text: 'Product added to cart!'
           }).show();
+          console.log('Success notification shown');
         })["catch"](function (error) {
-          console.log(error);
+          console.log('Error adding to cart:', error);
           new Noty({
             type: 'error',
             layout: 'topRight',
@@ -20362,6 +20368,11 @@ if (document.querySelector('.shopify-product-form')) {
       closeMiniCart: function closeMiniCart() {
         // 关闭迷你购物车的逻辑
       }
+    },
+    mounted: function mounted() {
+      console.log('Component mounted, checking availability...');
+      this.available = document.querySelector('.shopify-product-form').dataset.available === 'true';
+      console.log('Availability:', this.available);
     }
   });
 }
