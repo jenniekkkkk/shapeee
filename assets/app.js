@@ -15007,14 +15007,13 @@ const stringifySymbol = (v, i = "") => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue/dist/vue.js */ "./node_modules/vue/dist/vue.js");
-/* harmony import */ var vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm-bundler.js");
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
 /* harmony import */ var _product__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./product */ "./src/js/product.js");
-//import vue from 'vue';
-//const Vue = require('vue/dist/vue.js');
 
-window.Vue = (vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0___default());
+//const Vue = require('vue/dist/vue.js');
+//import Vue from 'vue/dist/vue.js';
+window.Vue = Vue;
 __webpack_require__(/*! ./components/ProductForm.js */ "./src/js/components/ProductForm.js");
 window.Noty = __webpack_require__(/*! noty */ "./node_modules/noty/lib/noty.js");
 
@@ -15026,7 +15025,7 @@ window.axios = axios;
 
 
 
-new (vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0___default())({
+new Vue({
   el: '#app'
 });
 
@@ -38576,16 +38575,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     };
 
 }));
-
-
-/***/ }),
-
-/***/ "./node_modules/vue/dist/vue.js":
-/*!**************************************!*\
-  !*** ./node_modules/vue/dist/vue.js ***!
-  \**************************************/
-/***/ (() => {
-
 
 
 /***/ }),
