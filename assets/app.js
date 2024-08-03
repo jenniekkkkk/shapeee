@@ -20321,7 +20321,7 @@ __webpack_require__(/*! ./components/ProductForm.js */ "./src/js/components/Prod
 /***/ (() => {
 
 if (document.querySelector('.shopify-product-form')) {
-  new Vue({
+  var productForm = new Vue({
     el: '.shopify-product-form',
     data: function data() {
       return {
