@@ -20321,19 +20321,21 @@ __webpack_require__(/*! ./components/ProductForm.js */ "./src/js/components/Prod
 /***/ (() => {
 
 if (document.querySelector('.shopify-product-form')) {
-  var productForm = new Vue({
+  new Vue({
     el: '.shopify-product-form',
     data: function data() {
       return {
         form: {
           id: document.getElementById('variant_id').value,
           quantity: 1
-        }
+        },
+        available: true // This should be dynamically set based on product availability
       };
     },
     methods: {
       addToCart: function addToCart() {
         var _this = this;
+        if (!this.available) return;
         axios.post('/cart/add.js', this.form).then(function (response) {
           var found = store.state.cartData[0].items.find(function (product) {
             return product.variant_id === response.data.variant_id;
@@ -20359,7 +20361,14 @@ if (document.querySelector('.shopify-product-form')) {
       },
       closeMiniCart: function closeMiniCart() {
         // Logic to close the mini cart
+      },
+      checkAvailability: function checkAvailability() {
+        // Logic to check product availability and set this.available
+        this.available = document.querySelector('[data-available]').dataset.available === 'true';
       }
+    },
+    mounted: function mounted() {
+      this.checkAvailability(); // Check availability on component mount
     }
   });
 }
