@@ -20356,12 +20356,6 @@ document.addEventListener('DOMContentLoaded', function () {
               text: 'Some notification text'
             }).show();
           });
-        },
-        closeMiniCart: function closeMiniCart() {
-          var miniCart = document.getElementById('mini-cart');
-          if (miniCart) {
-            miniCart.classList.add('hidden'); // 关闭迷你购物车的逻辑
-          }
         }
       },
       mounted: function mounted() {
