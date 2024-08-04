@@ -20311,11 +20311,11 @@ window.axios = axios;
 
 
 
+
+window.Noty = (noty__WEBPACK_IMPORTED_MODULE_3___default());
 __webpack_require__(/*! ./components/ProductForm.js */ "./src/js/components/ProductForm.js");
 
 //window.Noty = require('noty');
-
-window.Noty = (noty__WEBPACK_IMPORTED_MODULE_3___default());
 
 /***/ }),
 
