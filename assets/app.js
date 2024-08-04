@@ -20329,17 +20329,11 @@ document.addEventListener('DOMContentLoaded', function () {
           form: {
             id: document.getElementById('variant_id').value,
             quantity: 1
-          },
-          available: true // This should be dynamically set based on product availability
+          }
         };
       },
       methods: {
         addToCart: function addToCart() {
-          if (!this.available) {
-            console.log('Product is not available');
-            return; // 如果不可用则返回
-          }
-          console.log('Attempting to add to cart:', this.form);
           axios.post('/cart/add.js', this.form).then(function (response) {
             new Noty({
               type: 'success',
