@@ -20309,8 +20309,8 @@ window.axios = axios;
 
 
 
-window.Noty = __webpack_require__(/*! noty */ "./node_modules/noty/lib/noty.js");
 __webpack_require__(/*! ./components/ProductForm.js */ "./src/js/components/ProductForm.js");
+window.Noty = __webpack_require__(/*! noty */ "./node_modules/noty/lib/noty.js");
 
 /***/ }),
 
