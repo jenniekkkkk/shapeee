@@ -20296,6 +20296,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
 /* harmony import */ var _product__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./product */ "./src/js/product.js");
+/* harmony import */ var noty__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! noty */ "./node_modules/noty/lib/noty.js");
+/* harmony import */ var noty__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(noty__WEBPACK_IMPORTED_MODULE_3__);
 //import Vue from 'vue';
 //const Vue = require('vue/dist/vue.js');
 
@@ -20310,7 +20312,10 @@ window.axios = axios;
 
 
 __webpack_require__(/*! ./components/ProductForm.js */ "./src/js/components/ProductForm.js");
-window.Noty = __webpack_require__(/*! noty */ "./node_modules/noty/lib/noty.js");
+
+//window.Noty = require('noty');
+
+window.Noty = (noty__WEBPACK_IMPORTED_MODULE_3___default());
 
 /***/ }),
 
@@ -20334,7 +20339,6 @@ if (document.querySelector('.shopify-product-form')) {
     },
     methods: {
       addToCart: function addToCart() {
-        console.log('addToCart method called');
         axios.post('/cart/add.js', this.form).then(function (response) {
           new Noty({
             type: 'success',
