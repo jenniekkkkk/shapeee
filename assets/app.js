@@ -20300,7 +20300,6 @@ __webpack_require__.r(__webpack_exports__);
 //const Vue = require('vue/dist/vue.js');
 
 window.Vue = (vue_dist_vue_js__WEBPACK_IMPORTED_MODULE_0___default());
-window.Noty = __webpack_require__(/*! noty */ "./node_modules/noty/lib/noty.js");
 
 //import 'jquery';
 var jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
@@ -20310,6 +20309,7 @@ window.axios = axios;
 
 
 
+window.Noty = __webpack_require__(/*! noty */ "./node_modules/noty/lib/noty.js");
 __webpack_require__(/*! ./components/ProductForm.js */ "./src/js/components/ProductForm.js");
 
 /***/ }),
