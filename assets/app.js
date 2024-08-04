@@ -20320,41 +20320,40 @@ window.Noty = __webpack_require__(/*! noty */ "./node_modules/noty/lib/noty.js")
   \******************************************/
 /***/ (() => {
 
-document.addEventListener('DOMContentLoaded', function () {
-  if (document.querySelector('.shopify-product-form')) {
-    var productForm = new Vue({
-      el: '.shopify-product-form',
-      data: function data() {
-        return {
-          form: {
-            id: document.getElementById('variant_id').value,
-            quantity: 1
-          }
-        };
-      },
-      methods: {
-        addToCart: function addToCart() {
-          axios.post('/cart/add.js', this.form).then(function (response) {
-            new Noty({
-              type: 'success',
-              timeout: 3000,
-              layout: 'topRight',
-              text: 'Product added to cart!'
-            }).show();
-            console.log('Success notification shown');
-          })["catch"](function (error) {
-            console.log('Error adding to cart:', error);
-            new Noty({
-              type: 'error',
-              layout: 'topRight',
-              text: 'Some notification text'
-            }).show();
-          });
+//document.addEventListener('DOMContentLoaded', function () {
+if (document.querySelector('.shopify-product-form')) {
+  var productForm = new Vue({
+    el: '.shopify-product-form',
+    data: function data() {
+      return {
+        form: {
+          id: document.getElementById('variant_id').value,
+          quantity: 1
         }
+      };
+    },
+    methods: {
+      addToCart: function addToCart() {
+        axios.post('/cart/add.js', this.form).then(function (response) {
+          new Noty({
+            type: 'success',
+            timeout: 3000,
+            layout: 'topRight',
+            text: 'Product added to cart!'
+          }).show();
+          console.log('Success notification shown');
+        })["catch"](function (error) {
+          console.log('Error adding to cart:', error);
+          new Noty({
+            type: 'error',
+            layout: 'topRight',
+            text: 'Some notification text'
+          }).show();
+        });
       }
-    });
-  }
-});
+    }
+  });
+}
 
 /***/ }),
 
