@@ -20335,21 +20335,12 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       methods: {
         addToCart: function addToCart() {
-          var _this = this;
           if (!this.available) {
             console.log('Product is not available');
             return; // 如果不可用则返回
           }
           console.log('Attempting to add to cart:', this.form);
           axios.post('/cart/add.js', this.form).then(function (response) {
-            console.log('Product added to cart:', response.data);
-            var found = store.state.cartData[0].items.find(function (product) {
-              return product.variant_id === response.data.variant_id;
-            });
-            if (found) {
-              // Logic for if the product is found in the cart
-            }
-            _this.closeMiniCart();
             new Noty({
               type: 'success',
               timeout: 3000,
