@@ -20357,11 +20357,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }).show();
           });
         }
-      },
-      mounted: function mounted() {
-        console.log('Component mounted, checking availability...');
-        this.available = document.querySelector('.shopify-product-form').dataset.available === 'true';
-        console.log('Availability:', this.available);
       }
     });
   }
