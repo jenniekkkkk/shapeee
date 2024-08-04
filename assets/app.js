@@ -20334,6 +20334,7 @@ if (document.querySelector('.shopify-product-form')) {
     },
     methods: {
       addToCart: function addToCart() {
+        console.log('addToCart method called');
         axios.post('/cart/add.js', this.form).then(function (response) {
           new Noty({
             type: 'success',
