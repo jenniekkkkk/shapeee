@@ -20343,7 +20343,7 @@ if (document.querySelector('.shopify-product-form')) {
           new Noty({
             type: 'success',
             timeout: 3000,
-            layout: 'center',
+            layout: 'topRight',
             text: 'Product added to cart!'
           }).show();
           console.log('Success notification shown');
