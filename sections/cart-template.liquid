@@ -60,10 +60,10 @@
                       </div>
                     </td>
 
-                    <td data-label="{{ 'cart.label.price' | t }}">
+                    <td data-label="Price">
                       <template v-if="item.original_line_price != item.line_price">
-                        <span class="visually-hidden">{{ 'cart.label.discounted_price' | t }}</span>
-                        ${ item.price | money }
+                        <span class="visually-hidden">Discounted price</span>
+                        ${ item.price | money
                         <span class="visually-hidden">{{ 'cart.label.original_price' | t }}</span>
                         <s>${ item.original_price | money }</s>
                       </template>
