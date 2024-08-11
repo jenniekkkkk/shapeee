@@ -9,6 +9,7 @@
 */
 {
   "general": {
+    "continue_shopping": "Continue shopping",
     "meta": {
       "page": "page: current_page",
       "tags": "tag"
@@ -45,7 +46,6 @@
       "tiktok": "TikTok"
     }
   },
-  "continue_shopping": "Continue shopping",
   "pagination": {
     "label": "Pagination",
     "page": "Page {{ number }}",
