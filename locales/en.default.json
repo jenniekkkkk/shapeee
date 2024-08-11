@@ -8,6 +8,11 @@
 * ------------------------------------------------------------
 */
 {
+  "sections": {
+    "cart": {
+      "title": "Your Shopping Cart"
+    }
+  },
   "general": {
     "continue_shopping": "Continue Shopping"
   },
