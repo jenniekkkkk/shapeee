@@ -10,7 +10,11 @@
 {
   "sections": {
     "cart": {
-      "title": "Your Shopping Cart"
+      "headings": {
+        "product": "Product",
+        "quantity": "Quantity",
+        "price": "Price"
+      }
     }
   },
   "general": {
