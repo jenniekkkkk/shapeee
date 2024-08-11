@@ -78,10 +78,10 @@
                         :id="'updates_'+item.key"
                         v-model="item.quantity"
                         min="0"
-                        aria-label="{{ 'cart.general.item_quantity' | t }}"
+                        aria-label="Item_quantity"
                       >
                     </td>
-                    <td data-label="{{ 'cart.label.total' | t }}">${ total_price(item) | money }</td>
+                    <td data-label="Total">${ total_price(item) | money }</td>
                   </tr>
                 </template>
               </template>
