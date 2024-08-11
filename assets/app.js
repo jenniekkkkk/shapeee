@@ -20335,7 +20335,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 if (document.querySelector('.cart-form')) {
   var cartForm = new Vue({
     el: '.cart-form',
-    delimmmiters: ['${', '}'],
+    delimiters: ['${', '}'],
     data: function data() {
       return {
         form: {
@@ -20365,7 +20365,7 @@ if (document.querySelector('.cart-form')) {
         axios.post('/cart/update.js', {
           update: result
         }).then(function (response) {
-          store.store, cartData[0] = response.data;
+          store.state.cartData[0] = response.data;
           new Noty({
             type: 'success',
             timeout: 3000,
