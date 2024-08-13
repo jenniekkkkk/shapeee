@@ -104,18 +104,15 @@
                 {{ cart.total_discounts | money }}
               </p>
             {% endif %}
-            <input
-              type="submit"
-              name="checkout"
-              class="btn btn-primary"
-              value="{{ 'cart.general.update' | t }}"
-            >
+            <p>{{ 'cart.general.checkout' | t }}</p>
+
             <input
               type="button"
-              name="update"
-              value="update"
+              @click="updateCart"
+              name="updatecart"
+              class="btn btn-success"
+              value="{{ 'cart.general.update' | t }}"
             >
-
             <input
               type="submit"
               name="checkout"
