@@ -20338,7 +20338,7 @@ if (document.querySelector('.cart-form')) {
     delimiters: ['${', '}'],
     data: function data() {
       return {
-        cart: null
+        cart: []
       };
     },
     methods: {
