@@ -20338,10 +20338,7 @@ if (document.querySelector('.cart-form')) {
     delimiters: ['${', '}'],
     data: function data() {
       return {
-        form: {
-          id: document.getElementById('variant_id').value,
-          quantity: 1
-        }
+        cart: []
       };
     },
     methods: {
