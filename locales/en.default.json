@@ -98,6 +98,7 @@
     "general": {
       "title": "Shopping Cart",
       "estimated_total": "estimated_total",
+      "continue_shopping": "Continue Shopping",
       "remove": "Remove",
       "note": "Special instructions for seller",
       "subtotal": "Subtotal",
