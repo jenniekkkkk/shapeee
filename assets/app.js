@@ -20337,16 +20337,9 @@ if (document.querySelector('.cart-form')) {
     el: '.cart-form',
     delimiters: ['${', '}'],
     data: function data() {
-      // 返回一个包含组件数据属性的对象，这里有一个名为 cartData 的属性
       return {
-        cartData: store.state.cartData
+        cart: []
       };
-    },
-    computed: {
-      //包含计算属性，这里有 cart_total_price 和 cart 两个计算属性
-      cart: function cart() {
-        return this.cartData[0];
-      }
     },
     methods: {
       getCart: function getCart() {
