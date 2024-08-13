@@ -20358,8 +20358,8 @@ if (document.querySelector('.cart-form')) {
         });
       },
       updateCart: function updateCart() {
-        var result = this.cart.items.reduce(function (accumulater, target) {
-          return _objectSpread(_objectSpread({}, accumulater), {}, _defineProperty({}, target.variant_id, target.quantity));
+        var result = this.cart.items.reduce(function (accumulator, target) {
+          return _objectSpread(_objectSpread({}, accumulator), {}, _defineProperty({}, target.variant_id, target.quantity));
         }, {});
         console.log(result);
         axios.post('/cart/update.js', {
