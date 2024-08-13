@@ -20341,9 +20341,6 @@ if (document.querySelector('.cart-form')) {
         cart: null
       };
     },
-    created: function created() {
-      this.getCart();
-    },
     methods: {
       getCart: function getCart() {
         var _this = this;
