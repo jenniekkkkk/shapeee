@@ -15,74 +15,76 @@
             </thead>
             <tbody>
               <!-- if cart has loaded and has items -->
-              <template v-for="(item, index) in cart.items">
-                {% comment %}
-                  Cart Item Template
-                  =====================
-                  The data-label attributes on <td> elements are mobile-friendly
-                  helpers used for responsive-table labels
-                {% endcomment %}
+              <template v-if="cart">
+                <template v-for="(item, index) in cart.items">
+                  {% comment %}
+                    Cart Item Template
+                    =====================
+                    The data-label attributes on <td> elements are mobile-friendly
+                    helpers used for responsive-table labels
+                  {% endcomment %}
 
-                <tr class="responsive-table-row py-2">
-                  <td data-label="{{ 'customer.order.product' | t }}">
-                    <div class="d-flex">
-                      <div class="img">
-                        <template v-if="item.image">
-                          <a :href="item.url">
-                            <img class="img-fluid mr-4" width="150" :src="item.image" alt="" height="">
-                          </a>
-                        </template>
-                      </div>
+                  <tr class="responsive-table-row py-2">
+                    <td data-label="{{ 'customer.order.product' | t }}">
+                      <div class="d-flex">
+                        <div class="img">
+                          <template v-if="item.image">
+                            <a :href="item.url">
+                              <img class="img-fluid mr-4" width="150" :src="item.image" alt="" height="">
+                            </a>
+                          </template>
+                        </div>
 
-                      <div class="title">
-                        <a :href="item.url">${ item.product_title }</a>
+                        <div class="title">
+                          <a :href="item.url">${ item.product_title }</a>
 
-                        <template v-if="!item.product_has_only_default_variant">
-                          <p>${ item.variant_title }</p>
-                        </template>
+                          <template v-if="!item.product_has_only_default_variant">
+                            <p>${ item.variant_title }</p>
+                          </template>
 
-                        <template v-if="item.properties">
-                          <template v-for="p in item.properties">
-                            <template v-if="p.first">
-                              ${ p.first}
+                          <template v-if="item.properties">
+                            <template v-for="p in item.properties">
+                              <template v-if="p.first">
+                                ${ p.first}
 
-                              <template v-if="p.last.includes('/uploads/')">
-                                <a :href="p.last"> ${p.last.split('/').pop()} </a>
+                                <template v-if="p.last.includes('/uploads/')">
+                                  <a :href="p.last"> ${p.last.split('/').pop()} </a>
+                                </template>
+
+                                <template v-else> ${p.last} </template>
                               </template>
-
-                              <template v-else> ${p.last} </template>
                             </template>
                           </template>
-                        </template>
-                        <!-- endif item.properties -->
+                          <!-- endif item.properties -->
+                        </div>
+                        <!-- title -->
                       </div>
-                      <!-- title -->
-                    </div>
-                  </td>
+                    </td>
 
-                  <td data-label="Price">
-                    <template v-if="item.original_line_price != item.line_price">
-                      <span class="visually-hidden">Discounted price</span>
-                      ${ item.price | money}
-                      <span class="visually-hidden">Original price' | t }}</span>
-                      <s>${ item.original_price | money }</s>
-                    </template>
+                    <td data-label="Price">
+                      <template v-if="item.original_line_price != item.line_price">
+                        <span class="visually-hidden">Discounted price</span>
+                        ${ item.price | money}
+                        <span class="visually-hidden">Original price' | t }}</span>
+                        <s>${ item.original_price | money }</s>
+                      </template>
 
-                    <template v-else> ${item.price | money } </template>
-                  </td>
-                  <td data-label=" Quantity">
-                    <input
-                      type="number"
-                      class="form-control"
-                      name="updates[]"
-                      :id="'updates_'+item.key"
-                      v-model="item.quantity"
-                      min="0"
-                      aria-label="Item_quantity"
-                    >
-                  </td>
-                  <td data-label="Total">${ total_price(item) | money }</td>
-                </tr>
+                      <template v-else> ${item.price | money } </template>
+                    </td>
+                    <td data-label=" Quantity">
+                      <input
+                        type="number"
+                        class="form-control"
+                        name="updates[]"
+                        :id="'updates_'+item.key"
+                        v-model="item.quantity"
+                        min="0"
+                        aria-label="Item_quantity"
+                      >
+                    </td>
+                    <td data-label="Total">${ total_price(item) | money }</td>
+                  </tr>
+                </template>
               </template>
             </tbody>
           </table>
@@ -102,23 +104,20 @@
                 {{ cart.total_discounts | money }}
               </p>
             {% endif %}
+            <p>{{ 'cart.general.checkout' | t }}</p>
+
             <input
-              type="submit"
-              name="checkout"
-              class="btn btn-primary"
+              type="button"
+              @click="updateCart"
+              name="update"
+              class="btn btn-success"
               value="{{ 'cart.general.update' | t }}"
             >
             <input
-              type="button"
-              name="update"
-              value="update"
-            >
-
-            <input
               type="submit"
               name="checkout"
               class="btn btn-primary"
-
+              class="button"
               value="{{ 'cart.general.checkout' | t }}"
             >
           </div>
