@@ -98,7 +98,7 @@
               <textarea class="form-control" name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
             {% endif %}
 
-            <p>{{ 'cart.general.estimated_total' | t }}</p>
+            <p>{{ 'cart.estimated_total' | t }}</p>
             <p v-if="cart">${ cart_total_price | money }</p>
             {% if cart.total_discounts > 0 %}
               <p>
