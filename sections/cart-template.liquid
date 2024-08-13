@@ -1,6 +1,6 @@
 <div class="container">
   {% if cart.item_count > 0 %}
-    <h1 class="my-4">Shopping Cart</h1>
+    <h1 class="my-4">{{ 'cart.general.title' | t }}</h1>
 
     <form action="/cart" method="post" class="cart-form" novalidate>
       <div class="row">
@@ -8,7 +8,6 @@
           <table class="table table-borderless responsive-table">
             <thead class="small--hide">
               <tr class="border-bottom">
-                <th>{{ 'cart.general.title' | t }}</th>
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Total</th>
@@ -98,7 +97,7 @@
               <textarea class="form-control" name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
             {% endif %}
 
-            <p>{{ 'cart.estimated_total' | t }}</p>
+            <p>{{ 'cart.general.estimated_total' | t }}</p>
             <p v-if="cart">${ cart_total_price | money }</p>
             {% if cart.total_discounts > 0 %}
               <p>
