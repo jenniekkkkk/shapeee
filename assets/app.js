@@ -20337,47 +20337,56 @@ if (document.querySelector('.cart-form')) {
     el: '.cart-form',
     delimiters: ['${', '}'],
     data: function data() {
-      /*  */
       return {
-        cart: []
+        cart: {
+          items: []
+        }
       };
+    },
+    mounted: function mounted() {
+      this.getCart();
     },
     methods: {
       getCart: function getCart() {
         var _this = this;
         axios.get('/cart.js').then(function (response) {
-          console.log(response.data);
+          console.log(response.data); // 检查返回的购物车数据
           _this.cart = response.data;
         })["catch"](function (error) {
           new Noty({
             type: 'error',
             layout: 'topRight',
-            text: 'error just occured!'
+            text: 'An error occurred while loading the cart!'
           }).show();
         });
       },
       updateCart: function updateCart() {
-        var result = this.cart.items.reduce(function (accumulater, target) {
-          return _objectSpread(_objectSpread({}, accumulater), {}, _defineProperty({}, target.variant_id, target.quantity));
+        var _this2 = this;
+        var updates = this.cart.items.reduce(function (acc, item) {
+          return _objectSpread(_objectSpread({}, acc), {}, _defineProperty({}, item.variant_id, item.quantity));
         }, {});
-        console.log(result);
         axios.post('/cart/update.js', {
-          update: result
+          updates: updates
         }).then(function (response) {
-          store.state.cartData[0] = response.data;
+          _this2.cart = response.data;
           new Noty({
             type: 'success',
             timeout: 3000,
             layout: 'topRight',
-            text: 'Your cart items updated'
+            text: 'Your cart items have been updated'
           }).show();
         })["catch"](function (error) {
           new Noty({
             type: 'error',
             layout: 'topRight',
-            text: 'there was something wrong!'
+            text: 'There was an error updating the cart!'
           }).show();
         });
+      }
+    },
+    filters: {
+      money: function money(value) {
+        return (value / 100).toFixed(2); // 简单的货币格式化，假设Shopify的价格单位是分
       }
     }
   });
