@@ -20386,7 +20386,7 @@ if (document.querySelector('.cart-form')) {
     },
     filters: {
       money: function money(value) {
-        return (value / 100).toFixed(2); // 简单的货币格式化，假设Shopify的价格单位是分
+        return "$".concat((value / 100).toFixed(2)); // 简单的货币格式化，假设Shopify的价格单位是分
       }
     }
   });
