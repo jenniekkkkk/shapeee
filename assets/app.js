@@ -20337,6 +20337,7 @@ if (document.querySelector('.cart-form')) {
     el: '.cart-form',
     delimiters: ['${', '}'],
     data: function data() {
+      /*  */
       return {
         cart: []
       };
@@ -20345,6 +20346,7 @@ if (document.querySelector('.cart-form')) {
       getCart: function getCart() {
         var _this = this;
         axios.get('/cart.js').then(function (response) {
+          console.log(response.data);
           _this.cart = response.data;
         })["catch"](function (error) {
           new Noty({
