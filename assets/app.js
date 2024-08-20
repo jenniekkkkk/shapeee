@@ -20338,9 +20338,7 @@ if (document.querySelector('.cart-form')) {
     delimiters: ['${', '}'],
     data: function data() {
       return {
-        cart: {
-          items: [] // 确保 cart.items 存在并初始化为空数组
-        }
+        cart:null,
       };
     },
     mounted: function mounted() {
