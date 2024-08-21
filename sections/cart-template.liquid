@@ -106,7 +106,7 @@
                 {{ cart.total_discounts | money }}
               </p>
             {% endif %}
-            <p>{{ 'cart.general.checkout' | t }}</p>
+            {% comment %} <p>{{ 'cart.general.checkout' | t }}</p> {% endcomment %}
 
             <input
               type="button"
