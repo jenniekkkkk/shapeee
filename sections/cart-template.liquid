@@ -17,7 +17,7 @@
             <tbody>
               <!-- if cart has loaded and has items -->
               <template v-if="cart">
-                {% comment %} ${{ cart }} {% endcomment %}
+                ${{ cart }}
                 <template v-for="(item, index) in cart.items">
                   {% comment %}
                     Cart Item Template
