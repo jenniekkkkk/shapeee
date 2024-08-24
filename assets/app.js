@@ -20349,6 +20349,7 @@ if (document.querySelector('.cart-form')) {
       };
     },
     mounted: function mounted() {
+      console.log(this.cartData);
       this.getCart();
     },
     methods: {
