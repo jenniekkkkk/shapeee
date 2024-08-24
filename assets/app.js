@@ -20324,77 +20324,9 @@ __webpack_require__(/*! ./components/CartForm.js */ "./src/js/components/CartFor
 /*!***************************************!*\
   !*** ./src/js/components/CartForm.js ***!
   \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../shared/cartData.js */ "./src/js/shared/cartData.js");
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
-function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
-
-if (document.querySelector('.cart-form')) {
-  var cartForm = new Vue({
-    el: '.cart-form',
-    delimiters: ['${', '}'],
-    data: function data() {
-      return {
-        cart: {
-          items: [] // 确保 cart.items 存在并初始化为空数组
-        }
-      };
-    },
-    mounted: function mounted() {
-      this.getCart();
-    },
-    methods: {
-      getCart: function getCart() {
-        var _this = this;
-        axios.get('/cart.js').then(function (response) {
-          console.log(response.data); // 输出购物车数据到控制台
-          _this.cart = response.data; // 检查是否正确设置了 cart
-        })["catch"](function (error) {
-          new Noty({
-            type: 'error',
-            layout: 'topRight',
-            text: 'An error occurred while loading the cart!'
-          }).show();
-        });
-      },
-      updateCart: function updateCart() {
-        var _this2 = this;
-        var updates = this.cart.items.reduce(function (acc, item) {
-          return _objectSpread(_objectSpread({}, acc), {}, _defineProperty({}, item.variant_id, item.quantity));
-        }, {});
-        axios.post('/cart/update.js', {
-          updates: updates
-        }).then(function (response) {
-          _this2.cart = response.data; // 更新购物车数据
-          new Noty({
-            type: 'success',
-            timeout: 3000,
-            layout: 'topRight',
-            text: 'Your cart items have been updated'
-          }).show();
-        })["catch"](function (error) {
-          new Noty({
-            type: 'error',
-            layout: 'topRight',
-            text: 'There was an error updating the cart!'
-          }).show();
-        });
-      }
-    },
-    filters: {
-      money: function money(value) {
-        return "$".concat((value / 100).toFixed(2)); // 确保是数字格式
-      }
-    }
-  });
-}
+throw new Error("Module build failed (from ./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\src\\js\\components\\CartForm.js: Unexpected token (75:0)\n\n\u001b[0m \u001b[90m 73 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 74 |\u001b[39m }\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 75 |\u001b[39m\n \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n    at constructor (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:349:19)\n    at Parser.raise (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:3247:19)\n    at Parser.unexpected (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:3267:16)\n    at Parser.parseExprAtom (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10946:16)\n    at Parser.parseExprSubscripts (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10562:23)\n    at Parser.parseUpdate (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10547:21)\n    at Parser.parseMaybeUnary (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10527:23)\n    at Parser.parseMaybeUnaryOrPrivate (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10381:61)\n    at Parser.parseExprOps (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10386:23)\n    at Parser.parseMaybeConditional (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10363:23)\n    at Parser.parseMaybeAssign (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10326:21)\n    at Parser.parseExpressionBase (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10280:23)\n    at C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10276:39\n    at Parser.allowInAnd (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:11906:16)\n    at Parser.parseExpression (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10276:17)\n    at Parser.parseStatementContent (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12350:23)\n    at Parser.parseStatementLike (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12217:17)\n    at Parser.parseStatementListItem (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12197:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12770:61)\n    at Parser.parseBlockBody (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12763:10)\n    at Parser.parseBlock (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12751:10)\n    at Parser.parseStatementContent (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12307:21)\n    at Parser.parseStatementLike (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12217:17)\n    at Parser.parseStatementOrSloppyAnnexBFunctionDeclaration (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12207:17)\n    at Parser.parseIfStatement (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12584:28)\n    at Parser.parseStatementContent (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12246:21)\n    at Parser.parseStatementLike (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12217:17)\n    at Parser.parseModuleItem (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12194:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12770:36)\n    at Parser.parseBlockBody (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12763:10)\n    at Parser.parseProgram (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12091:10)\n    at Parser.parseTopLevel (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12081:25)\n    at Parser.parse (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:13893:10)\n    at parse (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:13927:38)\n    at parser (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\core\\lib\\parser\\index.js:41:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:64:37)\n    at normalizeFile.next (<anonymous>)\n    at run (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\core\\lib\\transformation\\index.js:21:50)\n    at run.next (<anonymous>)\n    at transform (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\core\\lib\\transform.js:22:33)\n    at transform.next (<anonymous>)\n    at step (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\gensync\\index.js:261:32)\n    at C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\gensync\\index.js:273:13\n    at async.call.result.err.err (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\gensync\\index.js:223:11)\n    at C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\gensync\\index.js:189:28\n    at C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\core\\lib\\gensync-utils\\async.js:67:7\n    at C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\gensync\\index.js:113:33\n    at step (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\gensync\\index.js:287:14)\n    at C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\gensync\\index.js:273:13");
 
 /***/ }),
 
@@ -20509,39 +20441,6 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.product-slider-nav').slick({
   centerMode: true,
   focusOnSelect: true
 });
-
-/***/ }),
-
-/***/ "./src/js/shared/cartData.js":
-/*!***********************************!*\
-  !*** ./src/js/shared/cartData.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   store: () => (/* binding */ store)
-/* harmony export */ });
-// shared data between cart and mini-cart
-
-var store = {
-  state: {
-    cartData: []
-  },
-  getCart: function getCart() {
-    var _this = this;
-    axios.get('/cart.js').then(function (response) {
-      _this.state.cartData.push(response.data);
-    })["catch"](function (error) {
-      new Noty({
-        type: 'error',
-        layout: 'topRight',
-        text: 'There was an error!!'
-      }).show();
-    });
-  }
-};
 
 /***/ }),
 
