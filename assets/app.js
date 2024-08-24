@@ -20419,21 +20419,19 @@ if (document.querySelector('.shopify-product-form')) {
     },
     methods: {
       addToCart: function addToCart() {
-        var _this = this;
         axios.post('/cart/add.js', this.form).then(function (response) {
-          //add data to mini cart object..
-          var found = store.state.cartData[0].items.find(function (product) {
-            return product.variant_id == response.data.variant_id;
-          });
-          if (found) {
-            found.quantity += parseInt(_this.from.quantity);
-          } else {
-            //add item at the start of array
-            store.state.cartData[0].items.unshift(response.data);
-          }
-          //open mini cart
-          $('.mini-cart').dropdown('show');
-          _this.closeMiniCart();
+          // //add data to mini cart object..
+          // let found = store.state.cartData[0].items.find((product) => product.variant_id == response.data.variant_id);
+          // if (found) {
+          //   found.quantity += parseInt(this.from.quantity);
+          // } else {
+          //   //add item at the start of array
+          //   store.state.cartData[0].items.unshift(response.data);
+          // }
+          // //open mini cart
+          // $('.mini-cart').dropdown('show');
+          // this.closeMiniCart();
+
           new Noty({
             type: 'success',
             timeout: 3000,
