@@ -20438,7 +20438,7 @@ if (document.querySelector('.shopify-product-form')) {
             layout: 'topRight',
             text: 'Product added to cart!'
           }).show();
-          // console.log('Success notification shown');
+          console.log('Success notification shown');
         })["catch"](function (error) {
           console.log('Error adding to cart:', error);
           new Noty({
