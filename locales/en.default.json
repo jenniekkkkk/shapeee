@@ -110,11 +110,6 @@
       "continue_browsing_html": "Continue browsing <a href=\"\/collections\/all\">here<\/a>.",
       "item_quantity": "Item quantity",
       "savings": "You're saving"
-    }
-  },
-  "sections": {
-    "cart": {
-      "title": "Shopping Cart"
     },
     "label": {
       "product": "Product",
