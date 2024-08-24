@@ -20328,7 +20328,7 @@ __webpack_require__(/*! ./components/CartForm.js */ "./src/js/components/CartFor
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-Object(function webpackMissingModule() { var e = new Error("Cannot find module 'src/js/shared/cartData.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../shared/cartData.js */ "./src/js/shared/cartData.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
@@ -20344,7 +20344,7 @@ if (document.querySelector('.cart-form')) {
       return {
         cart: {
           // items: [], // 确保 cart.items 存在并初始化为空数组
-          cartData: Object(function webpackMissingModule() { var e = new Error("Cannot find module 'src/js/shared/cartData.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).state.cartData
+          cartData: _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__.store.state.cartData
         }
       };
     },
@@ -20512,6 +20512,39 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('.product-slider-nav').slick({
   centerMode: true,
   focusOnSelect: true
 });
+
+/***/ }),
+
+/***/ "./src/js/shared/cartData.js":
+/*!***********************************!*\
+  !*** ./src/js/shared/cartData.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   store: () => (/* binding */ store)
+/* harmony export */ });
+// shared data between cart and mini-cart
+
+var store = {
+  state: {
+    cartData: []
+  },
+  getCart: function getCart() {
+    var _this = this;
+    axios.get('/cart.js').then(function (response) {
+      _this.state.cartData.push(response.data);
+    })["catch"](function (error) {
+      new Noty({
+        type: 'error',
+        layout: 'topRight',
+        text: 'There was an error!!'
+      }).show();
+    });
+  }
+};
 
 /***/ }),
 
