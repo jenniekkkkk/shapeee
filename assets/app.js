@@ -20418,7 +20418,21 @@ if (document.querySelector('.shopify-product-form')) {
     },
     methods: {
       addToCart: function addToCart() {
+        var _this = this;
         axios.post('/cart/add.js', this.form).then(function (response) {
+          //add data to mini cart object..
+          var found = store.state.cartData[0].items.find(function (product) {
+            return product.variant_id == response.data.variant_id;
+          });
+          if (found) {
+            found.quantity += parseInt(_this.from.quantity);
+          } else {
+            //add item at the start of array
+            store.state.cartData[0].items.unshift(response.data);
+          }
+          //open mini cart
+          // $('.mini-cart').dropdown('show');
+          _this.closeMiniCart();
           new Noty({
             type: 'success',
             timeout: 3000,
@@ -20434,6 +20448,12 @@ if (document.querySelector('.shopify-product-form')) {
             text: 'Some notification text'
           }).show();
         });
+      },
+      closeMiniCart: function closeMiniCart() {
+        //fix for bootstrap dropdown javascript opening and closing
+        $('.mini-cart').addClass('show');
+        $('.mini-cart.dropdown-menu').addClass('show');
+        $('.mini-cart.dropdown-item-text').removeClass('show');
       }
     }
   });
