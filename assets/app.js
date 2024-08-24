@@ -20342,69 +20342,59 @@ if (document.querySelector('.cart-form')) {
     delimiters: ['${', '}'],
     data: function data() {
       return {
-        cartData: Object(function webpackMissingModule() { var e = new Error("Cannot find module 'src/js/shared/cartData.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).state.cartData
+        cart: {
+          // items: [], // 确保 cart.items 存在并初始化为空数组
+          cartData: Object(function webpackMissingModule() { var e = new Error("Cannot find module 'src/js/shared/cartData.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).state.cartData
+        }
       };
+    },
+    mounted: function mounted() {
+      this.getCart();
+    },
+    methods: {
+      getCart: function getCart() {
+        var _this = this;
+        axios.get('/cart.js').then(function (response) {
+          console.log(response.data); // 输出购物车数据到控制台
+          _this.cart = response.data; // 检查是否正确设置了 cart
+        })["catch"](function (error) {
+          new Noty({
+            type: 'error',
+            layout: 'topRight',
+            text: 'An error occurred while loading the cart!'
+          }).show();
+        });
+      },
+      updateCart: function updateCart() {
+        var _this2 = this;
+        var updates = this.cart.items.reduce(function (acc, item) {
+          return _objectSpread(_objectSpread({}, acc), {}, _defineProperty({}, item.variant_id, item.quantity));
+        }, {});
+        axios.post('/cart/update.js', {
+          updates: updates
+        }).then(function (response) {
+          _this2.cart = response.data; // 更新购物车数据
+          new Noty({
+            type: 'success',
+            timeout: 3000,
+            layout: 'topRight',
+            text: 'Your cart items have been updated'
+          }).show();
+        })["catch"](function (error) {
+          new Noty({
+            type: 'error',
+            layout: 'topRight',
+            text: 'There was an error updating the cart!'
+          }).show();
+        });
+      }
+    },
+    filters: {
+      money: function money(value) {
+        return "$".concat((value / 100).toFixed(2)); // 确保是数字格式
+      }
     }
   });
-  if (document.querySelector('.cart-form')) {
-    var cartForm = new Vue({
-      el: '.cart-form',
-      delimiters: ['${', '}'],
-      data: function data() {
-        return {
-          cart: {
-            items: [] // 确保 cart.items 存在并初始化为空数组
-          }
-        };
-      },
-      mounted: function mounted() {
-        this.getCart();
-      },
-      methods: {
-        getCart: function getCart() {
-          var _this = this;
-          axios.get('/cart.js').then(function (response) {
-            console.log(response.data); // 输出购物车数据到控制台
-            _this.cart = response.data; // 检查是否正确设置了 cart
-          })["catch"](function (error) {
-            new Noty({
-              type: 'error',
-              layout: 'topRight',
-              text: 'An error occurred while loading the cart!'
-            }).show();
-          });
-        },
-        updateCart: function updateCart() {
-          var _this2 = this;
-          var updates = this.cart.items.reduce(function (acc, item) {
-            return _objectSpread(_objectSpread({}, acc), {}, _defineProperty({}, item.variant_id, item.quantity));
-          }, {});
-          axios.post('/cart/update.js', {
-            updates: updates
-          }).then(function (response) {
-            _this2.cart = response.data; // 更新购物车数据
-            new Noty({
-              type: 'success',
-              timeout: 3000,
-              layout: 'topRight',
-              text: 'Your cart items have been updated'
-            }).show();
-          })["catch"](function (error) {
-            new Noty({
-              type: 'error',
-              layout: 'topRight',
-              text: 'There was an error updating the cart!'
-            }).show();
-          });
-        }
-      },
-      filters: {
-        money: function money(value) {
-          return "$".concat((value / 100).toFixed(2)); // 确保是数字格式
-        }
-      }
-    });
-  }
 }
 
 /***/ }),
@@ -20429,19 +20419,21 @@ if (document.querySelector('.shopify-product-form')) {
     },
     methods: {
       addToCart: function addToCart() {
+        var _this = this;
         axios.post('/cart/add.js', this.form).then(function (response) {
-          // //add data to mini cart object..
-          // let found = store.state.cartData[0].items.find((product) => product.variant_id == response.data.variant_id);
-          // if (found) {
-          //   found.quantity += parseInt(this.from.quantity);
-          // } else {
-          //   //add item at the start of array
-          //   store.state.cartData[0].items.unshift(response.data);
-          // }
-          // //open mini cart
-          // // $('.mini-cart').dropdown('show');
-          // this.closeMiniCart();
-
+          //add data to mini cart object..
+          var found = store.state.cartData[0].items.find(function (product) {
+            return product.variant_id == response.data.variant_id;
+          });
+          if (found) {
+            found.quantity += parseInt(_this.from.quantity);
+          } else {
+            //add item at the start of array
+            store.state.cartData[0].items.unshift(response.data);
+          }
+          //open mini cart
+          $('.mini-cart').dropdown('show');
+          _this.closeMiniCart();
           new Noty({
             type: 'success',
             timeout: 3000,
