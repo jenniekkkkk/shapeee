@@ -20433,7 +20433,7 @@ if (document.querySelector('.shopify-product-form')) {
             store.state.cartData[0].items.unshift(response.data);
           }
           //open mini cart
-          $('.mini-cart').dropdown('show');
+          //$('.mini-cart').dropdown('show');
           _this.closeMiniCart();
           new Noty({
             type: 'success',
@@ -20441,9 +20441,9 @@ if (document.querySelector('.shopify-product-form')) {
             layout: 'topRight',
             text: 'Product added to cart!'
           }).show();
-          console.log('Success notification shown');
+          // console.log('Success notification shown');
         })["catch"](function (error) {
-          console.log('Error adding to cart:', error);
+          console.log(error);
           new Noty({
             type: 'error',
             layout: 'topRight',
