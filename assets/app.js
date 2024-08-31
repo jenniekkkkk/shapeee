@@ -20406,9 +20406,10 @@ if (document.querySelector('.cart-form')) {
   \******************************************/
 /***/ (() => {
 
-//document.addEventListener('DOMContentLoaded', function () {
 if (document.querySelector('.shopify-product-form')) {
+  //DOM查询语句它使用 CSS 选择//器 .shopify-product-form 来选择页面中第一个具有这个类名的元素。如果找到匹配的元素，条件表达式的值将是该元素，否则将是 null。
   var productForm = new Vue({
+    //定义员工新的vue
     el: '.shopify-product-form',
     data: function data() {
       return {
@@ -20420,56 +20421,22 @@ if (document.querySelector('.shopify-product-form')) {
     },
     methods: {
       addToCart: function addToCart() {
-        var _this = this;
-        console.log('Form data:', this.form);
         axios.post('/cart/add.js', this.form).then(function (response) {
-          console.log('Response:', response);
-          console.log('Response Data:', response.data);
-
-          //add data to mini cart object..
-          var found = store.state.cartData[0].items.find(function (product) {
-            return product.variant_id == response.data.variant_id;
-          });
-          if (found) {
-            found.quantity += parseInt(_this.form.quantity);
-          } else {
-            //add item at the start of array
-            store.state.cartData[0].items.unshift(response.data);
-          }
-          //open mini cart
-          //$('.mini-cart').dropdown('show');
-          _this.closeMiniCart();
           new Noty({
             type: 'success',
             timeout: 3000,
             layout: 'topRight',
             text: 'Product added to cart!'
           }).show();
-          // console.log('Success notification shown');
+          console.log('Success notification shown');
         })["catch"](function (error) {
-          console.error('Error:', error);
-          if (error.response) {
-            console.error('Response Error Data:', error.response.data);
-            new Noty({
-              type: 'error',
-              layout: 'topRight',
-              text: error.response.data.message || 'An error occurred'
-            }).show();
-          } else if (error.request) {
-            console.error('Request Error:', error.request);
-            new Noty({
-              type: 'error',
-              layout: 'topRight',
-              text: 'Some notification text'
-            }).show();
-          }
+          console.log('Error adding to cart:', error);
+          new Noty({
+            type: 'error',
+            layout: 'topRight',
+            text: 'Some notification text'
+          }).show();
         });
-      },
-      closeMiniCart: function closeMiniCart() {
-        //fix for bootstrap dropdown javascript opening and closing
-        $('.mini-cart').addClass('show');
-        $('.mini-cart.dropdown-menu').addClass('show');
-        $('.mini-cart.dropdown-item-text').removeClass('show');
       }
     }
   });
