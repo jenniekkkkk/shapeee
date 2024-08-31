@@ -20407,54 +20407,33 @@ if (document.querySelector('.cart-form')) {
 /***/ (() => {
 
 if (document.querySelector('.shopify-product-form')) {
+  //DOM查询语句它使用 CSS 选择//器 .shopify-product-form 来选择页面中第一个具有这个类名的元素。如果找到匹配的元素，条件表达式的值将是该元素，否则将是 null。
   var productForm = new Vue({
+    //定义员工新的vue
     el: '.shopify-product-form',
     data: function data() {
-      // 检查 #variant_id 元素是否存在，并获取其值
-      var variantElement = document.getElementById('variant_id');
       return {
         form: {
-          id: variantElement ? variantElement.value : null,
-          // 获取 variant_id，如果不存在则为 null
-          quantity: 1 // 默认购买数量为 1
+          id: document.getElementById('variant_id').value,
+          quantity: 1
         }
       };
     },
     methods: {
       addToCart: function addToCart() {
-        var _this = this;
-        if (!this.form.id) {
-          // 如果 variant_id 为空，则终止操作并通知用户
-          new Noty({
-            type: 'error',
-            layout: 'topRight',
-            text: 'Product variant ID is missing. Cannot add to cart.'
-          }).show();
-          return;
-        }
         axios.post('/cart/add.js', this.form).then(function (response) {
-          var _store$state$cartData;
-          if (!response.data || !response.data.variant_id) {
-            throw new Error('Invalid response data from server.');
-          }
+          // //add data to mini cart object..
+          // let found = store.state.cartData[0].items.find((product) => product.variant_id == response.data.variant_id);
+          // if (found) {
+          //   found.quantity += parseInt(this.form.quantity);
+          // } else {
+          //   //add item at the start of array
+          //   store.state.cartData[0].items.unshift(response.data);
+          // }
+          // //open mini cart
+          // //$('.mini-cart').dropdown('show');
+          // this.closeMiniCart();
 
-          // 查找购物车中是否已有该商品
-          var found = (_store$state$cartData = store.state.cartData[0]) === null || _store$state$cartData === void 0 ? void 0 : _store$state$cartData.items.find(function (product) {
-            return product.variant_id == response.data.variant_id;
-          });
-          if (found) {
-            // 如果已存在，增加其数量
-            found.quantity += parseInt(_this.form.quantity, 10);
-          } else {
-            var _store$state$cartData2;
-            // 如果不存在，将新商品添加到购物车
-            (_store$state$cartData2 = store.state.cartData[0]) === null || _store$state$cartData2 === void 0 || _store$state$cartData2.items.unshift(response.data);
-          }
-
-          // 打开迷你购物车
-          _this.closeMiniCart();
-
-          // 显示成功通知
           new Noty({
             type: 'success',
             timeout: 3000,
@@ -20463,17 +20442,16 @@ if (document.querySelector('.shopify-product-form')) {
           }).show();
           console.log('Success notification shown');
         })["catch"](function (error) {
-          var _error$response;
-          console.error('Error adding to cart:', error);
+          console.log('Error adding to cart:', error);
           new Noty({
             type: 'error',
             layout: 'topRight',
-            text: ((_error$response = error.response) === null || _error$response === void 0 || (_error$response = _error$response.data) === null || _error$response === void 0 ? void 0 : _error$response.message) || 'Failed to add product to cart'
+            text: 'Some notification text'
           }).show();
         });
       },
       closeMiniCart: function closeMiniCart() {
-        // 修复 Bootstrap 下拉菜单的显示和隐藏问题
+        //fix for bootstrap dropdown javascript opening and closing
         $('.mini-cart').addClass('show');
         $('.mini-cart.dropdown-menu').addClass('show');
         $('.mini-cart.dropdown-item-text').removeClass('show');
@@ -20557,10 +20535,8 @@ var store = {
   getCart: function getCart() {
     var _this = this;
     axios.get('/cart.js').then(function (response) {
-      _this.state.cartData.splice(0, _this.state.cartData.length);
       _this.state.cartData.push(response.data);
     })["catch"](function (error) {
-      console.error('Error fetching cart:', error);
       new Noty({
         type: 'error',
         layout: 'topRight',
