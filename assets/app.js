@@ -20421,7 +20421,11 @@ if (document.querySelector('.shopify-product-form')) {
     methods: {
       addToCart: function addToCart() {
         var _this = this;
+        console.log('Form data:', this.form);
         axios.post('/cart/add.js', this.form).then(function (response) {
+          console.log('Response:', response);
+          console.log('Response Data:', response.data);
+
           //add data to mini cart object..
           var found = store.state.cartData[0].items.find(function (product) {
             return product.variant_id == response.data.variant_id;
@@ -20443,12 +20447,22 @@ if (document.querySelector('.shopify-product-form')) {
           }).show();
           // console.log('Success notification shown');
         })["catch"](function (error) {
-          console.log(error);
-          new Noty({
-            type: 'error',
-            layout: 'topRight',
-            text: 'Some notification text'
-          }).show();
+          console.error('Error:', error);
+          if (error.response) {
+            console.error('Response Error Data:', error.response.data);
+            new Noty({
+              type: 'error',
+              layout: 'topRight',
+              text: error.response.data.message || 'An error occurred'
+            }).show();
+          } else if (error.request) {
+            console.error('Request Error:', error.request);
+            new Noty({
+              type: 'error',
+              layout: 'topRight',
+              text: 'Some notification text'
+            }).show();
+          }
         });
       },
       closeMiniCart: function closeMiniCart() {
