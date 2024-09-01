@@ -26,6 +26,21 @@
                     helpers used for responsive-table labels
                   {% endcomment %}
 
+                  <div class="cart-dropdown">
+                    <ul>
+                      {% for item in cart.items %}
+                        <li>
+                          <a href="{{ item.url }}">
+                            <img class="img-fluid mr-4" width="150" :src="item.image" alt="" height="">
+                            <span>{{ item.title }}</span>
+                            <span>{{ item.quantity }}</span>
+                            <span>{{ item.price | money }}</span>
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+
                   <tr class="responsive-table-row py-2">
                     <td data-label="{{ 'customer.order.product' | t }}">
                       <div class="d-flex">
