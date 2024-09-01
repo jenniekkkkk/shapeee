@@ -20442,7 +20442,7 @@ if (document.querySelector('.mini-cart')) {
           return product.variant_id == item.variant_id;
         });
         if (found) {
-          this.updatCart(found, 1);
+          this.updateCart(found, 1);
         }
       },
       decrement: function decrement(item) {
@@ -20452,7 +20452,7 @@ if (document.querySelector('.mini-cart')) {
         });
         if (found) {
           if (item.quantity > 0) {
-            this.updataCart(found, -1);
+            this.updateCart(found, -1);
           }
         }
       },
