@@ -22,7 +22,7 @@
             <s>${ item.original_price }</s>
           </template>
 
-          <template v-else> ${item.price | money } </template>
+          {% comment %} <template v-else> ${item.price | money } </template> {% endcomment %}
         </div>
 
         <div class="input-group quantity mt-3">
