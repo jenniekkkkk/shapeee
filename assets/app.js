@@ -20349,6 +20349,15 @@ if (document.querySelector('.cart-form')) {
         }
       };
     },
+    computed: {
+      cart: function cart() {
+        return this.cartData[0];
+      }
+    },
+    created: function created() {
+      // mini cart is on every page, that's why, we cal it once here
+      _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__.store.getCart();
+    },
     mounted: function mounted() {
       console.log(this.cartData);
       this.getCart();
