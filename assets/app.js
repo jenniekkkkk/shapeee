@@ -20420,10 +20420,7 @@ if (document.querySelector('.mini-cart')) {
     delimiters: ['${', '}'],
     data: function data() {
       return {
-        cartData: _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__.store.state.cartData,
-        cart: {
-          items: []
-        }
+        cartData: _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__.store.state.cartData
       };
     },
     computed: {
