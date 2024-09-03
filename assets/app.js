@@ -20343,10 +20343,7 @@ if (document.querySelector('.cart-form')) {
     delimiters: ['${', '}'],
     data: function data() {
       return {
-        cart: {
-          // items: [], // 确保 cart.items 存在并初始化为空数组
-          cartData: _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__.store.state.cartData
-        }
+        cartData: _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__.store.state.cartData
       };
     },
     computed: {
