@@ -20426,6 +20426,15 @@ if (document.querySelector('.mini-cart')) {
         }
       };
     },
+    computed: {
+      cart: function cart() {
+        return this.cartData[0];
+      }
+    },
+    created: function created() {
+      // mini cart is on every page, that's why, we cal it once here
+      _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__.store.getCart();
+    },
     methods: {
       //remove item from cart
       remove: function remove(item) {
@@ -20526,19 +20535,21 @@ if (document.querySelector('.shopify-product-form')) {
     },
     methods: {
       addToCart: function addToCart() {
+        var _this = this;
         axios.post('/cart/add.js', this.form).then(function (response) {
-          // //add data to mini cart object..
-          // let found = store.state.cartData[0].items.find((product) => product.variant_id == response.data.variant_id);
-          // if (found) {
-          //   found.quantity += parseInt(this.form.quantity);
-          // } else {
-          //   //add item at the start of array
-          //   store.state.cartData[0].items.unshift(response.data);
-          // }
-          // //open mini cart
-          // //$('.mini-cart').dropdown('show');
-          // this.closeMiniCart();
-
+          //add data to mini cart object..
+          var found = store.state.cartData[0].items.find(function (product) {
+            return product.variant_id == response.data.variant_id;
+          });
+          if (found) {
+            found.quantity += parseInt(_this.form.quantity);
+          } else {
+            //add item at the start of array
+            store.state.cartData[0].items.unshift(response.data);
+          }
+          //open mini cart
+          //$('.mini-cart').dropdown('show');
+          _this.closeMiniCart();
           new Noty({
             type: 'success',
             timeout: 3000,
