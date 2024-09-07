@@ -20591,7 +20591,7 @@ if (document.querySelector('.shopify-product-form')) {
   \*********************************/
 /***/ (() => {
 
-vue.filter('money', function (value) {
+Vue.filter('money', function (value) {
   var sign = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '$';
   if (!value) return 0;
   return sign + (value / 100).toFixed(2);
