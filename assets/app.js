@@ -20326,9 +20326,88 @@ __webpack_require__(/*! ./filters/money.js */ "./src/js/filters/money.js");
 /*!***************************************!*\
   !*** ./src/js/components/CartForm.js ***!
   \***************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/laravel-mix/node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\src\\js\\components\\CartForm.js: Missing semicolon. (65:17)\n\n\u001b[0m \u001b[90m 63 |\u001b[39m     filters\u001b[33m:\u001b[39m {\n \u001b[90m 64 |\u001b[39m       money(value) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 65 |\u001b[39m         \u001b[36mreturn\u001b[39m $$ {(value \u001b[35m/ 100).toFixed(2)}; /\u001b[39m\u001b[33m/\u001b[39m 确保是数字格式\n \u001b[90m    |\u001b[39m                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 66 |\u001b[39m       }\u001b[33m,\u001b[39m\n \u001b[90m 67 |\u001b[39m     }\u001b[33m,\u001b[39m\n \u001b[90m 68 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n    at constructor (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:349:19)\n    at Parser.raise (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:3247:19)\n    at Parser.semicolon (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:3573:10)\n    at Parser.parseReturnStatement (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12597:12)\n    at Parser.parseStatementContent (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12248:21)\n    at Parser.parseStatementLike (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12217:17)\n    at Parser.parseStatementListItem (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12197:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12770:61)\n    at Parser.parseBlockBody (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12763:10)\n    at Parser.parseBlock (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:12751:10)\n    at Parser.parseFunctionBody (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:11596:24)\n    at Parser.parseFunctionBodyAndFinish (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:11582:10)\n    at Parser.parseMethod (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:11540:31)\n    at Parser.parseObjectMethod (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:11444:19)\n    at Parser.parseObjPropValue (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:11475:23)\n    at Parser.parsePropertyDefinition (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:11415:17)\n    at Parser.parseObjectLike (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:11330:21)\n    at Parser.parseExprAtom (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10847:23)\n    at Parser.parseExprSubscripts (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10562:23)\n    at Parser.parseUpdate (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10547:21)\n    at Parser.parseMaybeUnary (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10527:23)\n    at Parser.parseMaybeUnaryOrPrivate (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10381:61)\n    at Parser.parseExprOps (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10386:23)\n    at Parser.parseMaybeConditional (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10363:23)\n    at Parser.parseMaybeAssign (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10326:21)\n    at C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10296:39\n    at Parser.allowInAnd (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:11911:12)\n    at Parser.parseMaybeAssignAllowIn (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10296:17)\n    at Parser.parseObjectProperty (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:11450:83)\n    at Parser.parseObjPropValue (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:11475:100)\n    at Parser.parsePropertyDefinition (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:11415:17)\n    at Parser.parseObjectLike (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:11330:21)\n    at Parser.parseExprAtom (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10847:23)\n    at Parser.parseExprSubscripts (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10562:23)\n    at Parser.parseUpdate (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10547:21)\n    at Parser.parseMaybeUnary (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10527:23)\n    at Parser.parseMaybeUnaryOrPrivate (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10381:61)\n    at Parser.parseExprOps (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10386:23)\n    at Parser.parseMaybeConditional (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10363:23)\n    at Parser.parseMaybeAssign (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10326:21)\n    at C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10296:39\n    at Parser.allowInAnd (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:11911:12)\n    at Parser.parseMaybeAssignAllowIn (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10296:17)\n    at Parser.parseExprListItem (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:11671:18)\n    at Parser.parseExprList (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:11646:22)\n    at Parser.parseNew (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:11245:25)\n    at Parser.parseNewOrNewTarget (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:11240:17)\n    at Parser.parseExprAtom (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10856:21)\n    at Parser.parseExprSubscripts (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10562:23)\n    at Parser.parseUpdate (C:\\Users\\21646\\Desktop\\shopifybackup\\shapeee\\node_modules\\@babel\\parser\\lib\\index.js:10547:21)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../shared/cartData.js */ "./src/js/shared/cartData.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
+if (document.querySelector('.cart-form')) {
+  var productForm = new Vue({
+    el: '.cart-form',
+    delimiters: ['${', '}'],
+    data: function data() {
+      return {
+        cartData: _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__.store.state.cartData
+      };
+    },
+    computed: {
+      cart: function cart() {
+        return this.cartData[0];
+      }
+    },
+    created: function created() {
+      // mini cart is on every page, that's why, we cal it once here
+      _shared_cartData_js__WEBPACK_IMPORTED_MODULE_0__.store.getCart();
+    },
+    mounted: function mounted() {
+      console.log(this.cartData);
+      this.getCart();
+    },
+    methods: {
+      getCart: function getCart() {
+        var _this = this;
+        axios.get('/cart.js').then(function (response) {
+          console.log(response.data); // 输出购物车数据到控制台
+          _this.cart = response.data; // 检查是否正确设置了 cart
+        })["catch"](function (error) {
+          new Noty({
+            type: 'error',
+            layout: 'topRight',
+            text: 'An error occurred while loading the cart!'
+          }).show();
+        });
+      },
+      updateCart: function updateCart() {
+        var _this2 = this;
+        var updates = this.cart.items.reduce(function (acc, item) {
+          return _objectSpread(_objectSpread({}, acc), {}, _defineProperty({}, item.variant_id, item.quantity));
+        }, {});
+        axios.post('/cart/update.js', {
+          updates: updates
+        }).then(function (response) {
+          _this2.cart = response.data; // 更新购物车数据
+          new Noty({
+            type: 'success',
+            timeout: 3000,
+            layout: 'topRight',
+            text: 'Your cart items have been updated'
+          }).show();
+        })["catch"](function (error) {
+          new Noty({
+            type: 'error',
+            layout: 'topRight',
+            text: 'There was an error updating the cart!'
+          }).show();
+        });
+      }
+    },
+    filters: {
+      money: function money(value) {
+        return $$;
+        {
+          (value / 100).toFixed(2);
+        } // 确保是数字格式
+      }
+    }
+  });
+}
 
 /***/ }),
 
