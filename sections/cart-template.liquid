@@ -84,7 +84,8 @@
                         aria-label="Item_quantity"
                       >
                     </td>
-                    <td data-label="Total">${ total_price(item) | money }</td>
+                    {% comment %} <td data-label="Total">${ total_price(item) | money }</td> {% endcomment %}
+                    <td data-label="Total">${ (item.price * item.quantity) | money }</td>
                   </tr>
                 </template>
               </template>
