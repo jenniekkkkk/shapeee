@@ -20350,12 +20350,13 @@ if (document.querySelector('.cart-form')) {
     computed: {
       cart: function cart() {
         return this.cartData[0];
-      } // totalPrice() {
-      //   if (!this.cart || !this.cart.items) return 0;
-      //   return this.cart.items.reduce((total, item) => {
-      //     return total + item.price * item.quantity;
-      //   }, 0); // 总价是所有商品单价乘数量的和
-      // },
+      },
+      totalPrice: function totalPrice() {
+        if (!this.cart || !this.cart.items) return 0;
+        return this.cart.items.reduce(function (total, item) {
+          return total + item.price * item.quantity;
+        }, 0); // 总价是所有商品单价乘数量的和
+      }
     },
     created: function created() {
       // mini cart is on every page, that's why, we cal it once here
@@ -20403,7 +20404,7 @@ if (document.querySelector('.cart-form')) {
         });
       }
     },
-    filters: {
+    filter: {
       money: function money(value) {
         return "$".concat((value / 100).toFixed(2)); // 确保是数字格式
       }
