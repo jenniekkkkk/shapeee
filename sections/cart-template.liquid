@@ -85,7 +85,6 @@
                       >
                     </td>
                     {% comment %} <td data-label="Total">${ total_price(item) | money }</td> {% endcomment %}
-                    <td data-label="Total">${ (item.price * item.quantity) | money }</td>
                   </tr>
                 </template>
               </template>
@@ -99,8 +98,8 @@
               <label class="form-label" for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
               <textarea class="form-control" name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
             {% endif %}
-            {% comment %} <p>{{ 'cart.general.subtotal' | t }}</p> {% endcomment %}
-            <p v-if="cart">${ cart_total_price | money }</p>
+            <p>{{ 'cart.general.subtotal' | t }}</p>
+            {% comment %} <p v-if="cart">${ cart_total_price | money }</p> {% endcomment %}
             {% if cart.total_discounts > 0 %}
               <p>
                 {{ 'cart.general.savings' | t }}
