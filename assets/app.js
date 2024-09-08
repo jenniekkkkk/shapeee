@@ -20350,9 +20350,6 @@ if (document.querySelector('.cart-form')) {
     computed: {
       cart: function cart() {
         return this.cartData[0];
-      },
-      total_Price: function total_Price(item) {
-        return item.price * item.quantity;
       }
     },
     created: function created() {
@@ -20364,6 +20361,9 @@ if (document.querySelector('.cart-form')) {
       this.getCart();
     },
     methods: {
+      total_Price: function total_Price(item) {
+        return item.price * item.quantity;
+      },
       getCart: function getCart() {
         var _this = this;
         axios.get('/cart.js').then(function (response) {
