@@ -20556,7 +20556,7 @@ if (document.querySelector('.shopify-product-form')) {
             return product.variant_id == response.data.variant_id;
           });
           if (found) {
-            found.quantity += parseInt(_this.from.quantity);
+            found.quantity += parseInt(_this.form.quantity);
           } else {
             //add item at the start of array
             store.state.cartData[0].items.unshift(response.data);
