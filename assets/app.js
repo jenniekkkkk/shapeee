@@ -20350,12 +20350,10 @@ if (document.querySelector('.cart-form')) {
     computed: {
       cart_total_price: function cart_total_price() {
         var total = 0;
-        if (this.cartData[0] && this.cartData[0].items) {
-          this.cartData[0].items.forEach(function (item) {
-            total += item.quantity + item.price;
-          });
-          return total;
-        }
+        this.cartData[0].items.forEach(function (item) {
+          total += item.quantity * item.price;
+        });
+        return total;
       },
       cart: function cart() {
         return this.cartData[0];
