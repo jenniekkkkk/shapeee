@@ -20367,8 +20367,8 @@ if (document.querySelector('.cart-form')) {
       getCart: function getCart() {
         var _this = this;
         axios.get('/cart.js').then(function (response) {
-          console.log(response.data); // 输出购物车数据到控制台
-          _this.cart = response.data; // 检查是否正确设置了 cart
+          console.log(response.data);
+          _this.cartData = [response.data]; // 将数据存入 cartData
         })["catch"](function (error) {
           new Noty({
             type: 'error',
