@@ -20369,6 +20369,9 @@ if (document.querySelector('.cart-form')) {
         axios.get('/cart.js').then(function (response) {
           console.log(response.data);
           _this.cartData = [response.data]; // 将数据存入 cartData
+          _this.cartData[0].items.forEach(function (item) {
+            _this.$set(item, 'totalPrice', _this.total_Price(item));
+          });
         })["catch"](function (error) {
           new Noty({
             type: 'error',
@@ -20385,7 +20388,7 @@ if (document.querySelector('.cart-form')) {
         axios.post('/cart/update.js', {
           updates: updates
         }).then(function (response) {
-          _this2.cart = response.data; // 更新购物车数据
+          _this2.cartData = [response.data]; // 更新购物车数据
           new Noty({
             type: 'success',
             timeout: 3000,
