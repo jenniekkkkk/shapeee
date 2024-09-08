@@ -20367,11 +20367,8 @@ if (document.querySelector('.cart-form')) {
       getCart: function getCart() {
         var _this = this;
         axios.get('/cart.js').then(function (response) {
-          console.log(response.data);
-          _this.cartData = [response.data]; // 将数据存入 cartData
-          _this.cartData[0].items.forEach(function (item) {
-            _this.$set(item, 'totalPrice', _this.total_Price(item));
-          });
+          console.log(response.data); // 输出购物车数据到控制台
+          _this.cart = response.data; // 检查是否正确设置了 cart
         })["catch"](function (error) {
           new Noty({
             type: 'error',
@@ -20388,7 +20385,7 @@ if (document.querySelector('.cart-form')) {
         axios.post('/cart/update.js', {
           updates: updates
         }).then(function (response) {
-          _this2.cartData = [response.data]; // 更新购物车数据
+          _this2.cart = response.data; // 更新购物车数据
           new Noty({
             type: 'success',
             timeout: 3000,
@@ -20406,7 +20403,7 @@ if (document.querySelector('.cart-form')) {
     },
     filters: {
       money: function money(value) {
-        return "$".concat((value / 100).toFixed(2)); // 确保是数字格式
+        return "$".concat((value / 100).toFixed(2), ";"); // 确保是数字格式
       }
     }
   });
