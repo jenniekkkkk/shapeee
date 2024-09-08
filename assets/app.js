@@ -20535,9 +20535,7 @@ if (document.querySelector('.mini-cart')) {
 /***/ (() => {
 
 if (document.querySelector('.shopify-product-form')) {
-  //DOM查询语句它使用 CSS 选择//器 .shopify-product-form 来选择页面中第一个具有这个类名的元素。如果找到匹配的元素，条件表达式的值将是该元素，否则将是 null。
   var productForm = new Vue({
-    //定义员工新的vue
     el: '.shopify-product-form',
     data: function data() {
       return {
@@ -20551,37 +20549,46 @@ if (document.querySelector('.shopify-product-form')) {
       addToCart: function addToCart() {
         var _this = this;
         axios.post('/cart/add.js', this.form).then(function (response) {
-          //add data to mini cart object..
+          // Add data to mini cart object
           var found = store.state.cartData[0].items.find(function (product) {
             return product.variant_id == response.data.variant_id;
           });
           if (found) {
-            found.quantity += parseInt(_this.form.quantity);
+            found.quantity += parseInt(_this.form.quantity); // 确保拼写正确
           } else {
-            //add item at the start of array
+            // Add item at the start of array
             store.state.cartData[0].items.unshift(response.data);
           }
-          //open mini cart
+
+          // Open mini cart
           $('.mini-cart').dropdown('show');
           _this.closeMiniCart();
+
+          // Display success notification
           new Noty({
             type: 'success',
+            // 成功提示
             timeout: 3000,
+            // 3秒后自动关闭
             layout: 'topRight',
-            text: 'Product added to cart!'
+            // 显示位置：右上角
+            text: 'Product added to cart!' // 成功信息
           }).show();
-          console.log('Success notification shown');
+          console.log('Product added successfully.');
         })["catch"](function (error) {
-          console.log('Error adding to cart:', error);
+          console.error('Error adding to cart:', error);
+          // Display error notification
           new Noty({
             type: 'error',
+            // 错误提示
             layout: 'topRight',
-            text: 'Some notification text'
+            // 显示位置：右上角
+            text: 'Error adding product to cart' // 错误信息
           }).show();
         });
       },
       closeMiniCart: function closeMiniCart() {
-        //fix for bootstrap dropdown javascript opening and closing
+        // Fix for Bootstrap dropdown JavaScript opening and closing
         $('.mini-cart').addClass('show');
         $('.mini-cart.dropdown-menu').addClass('show');
         $('.mini-cart.dropdown-item-text').removeClass('show');
