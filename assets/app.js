@@ -20382,7 +20382,7 @@ if (document.querySelector('.cart-form')) {
         });
       },
       total_price: function total_price(item) {
-        return item.pricr * item.quantity;
+        return item.price * item.quantity;
       },
       updateCart: function updateCart() {
         var _this2 = this;
