@@ -20361,9 +20361,6 @@ if (document.querySelector('.cart-form')) {
       this.getCart();
     },
     methods: {
-      total_Price: function total_Price(item) {
-        return item.price * item.quantity;
-      },
       getCart: function getCart() {
         var _this = this;
         axios.get('/cart.js').then(function (response) {
@@ -20403,7 +20400,7 @@ if (document.querySelector('.cart-form')) {
     },
     filters: {
       money: function money(value) {
-        return "$".concat((value / 100).toFixed(2), ";"); // 确保是数字格式
+        return "$".concat((value / 100).toFixed(2)); // 确保是数字格式
       }
     }
   });
@@ -20549,13 +20546,13 @@ if (document.querySelector('.shopify-product-form')) {
             return product.variant_id == response.data.variant_id;
           });
           if (found) {
-            found.quantity += parseInt(_this.form.quantity);
+            found.quantity += parseInt(_this.from.quantity);
           } else {
             //add item at the start of array
             store.state.cartData[0].items.unshift(response.data);
           }
           //open mini cart
-          //$('.mini-cart').dropdown('show');
+          $('.mini-cart').dropdown('show');
           _this.closeMiniCart();
           new Noty({
             type: 'success',
