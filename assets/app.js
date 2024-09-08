@@ -20348,6 +20348,13 @@ if (document.querySelector('.cart-form')) {
       };
     },
     computed: {
+      cart_total_price: function cart_total_price() {
+        var total = 0;
+        this.cartData[0].items.forEach(function (item) {
+          total += item.quantity + item.price;
+        });
+        return total;
+      },
       cart: function cart() {
         return this.cartData[0];
       }
@@ -20373,6 +20380,9 @@ if (document.querySelector('.cart-form')) {
             text: 'An error occurred while loading the cart!'
           }).show();
         });
+      },
+      total_price: function total_price(item) {
+        return item.pricr * item.quantity;
       },
       updateCart: function updateCart() {
         var _this2 = this;
