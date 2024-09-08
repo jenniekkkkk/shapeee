@@ -8,18 +8,18 @@
           <table class="table table-borderless responsive-table">
             <thead class="small--hide">
               <tr class="border-bottom">
-                <th>Product</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
+                <th>{{ 'cart.label.product' | t }}</th>
+                <th>{{ 'cart.label.price' | t }}</th>
+                <th>{{ 'cart.label.quantity' | t }}</th>
+                <th>{{ 'cart.label.total' | t }}</th>
               </tr>
             </thead>
             <tbody>
               <!-- if cart has loaded and has items -->
               <template v-if="cart">
-                {% comment %} ${{ cart }} {% endcomment %}
                 <template v-for="(item, index) in cart.items">
                   {% comment %}
+
                     Cart Item Template
                     =====================
                     The data-label attributes on <td> elements are mobile-friendly
@@ -63,17 +63,17 @@
                       </div>
                     </td>
 
-                    <td data-label="Price">
+                    <td data-label="{{ 'cart.label.price' | t }}">
                       <template v-if="item.original_line_price != item.line_price">
-                        <span class="visually-hidden">Discounted price</span>
-                        ${ item.price | money}
-                        <span class="visually-hidden">Original price' | t }}</span>
+                        <span class="visually-hidden">{{ 'cart.label.discounted_price' | t }}</span>
+                        ${ item.price | money }
+                        <span class="visually-hidden">{{ 'cart.label.original_price' | t }}</span>
                         <s>${ item.original_price | money }</s>
                       </template>
 
                       <template v-else> ${item.price | money } </template>
                     </td>
-                    <td data-label=" Quantity">
+                    <td data-label="{{ 'cart.label.quantity' | t }}">
                       <input
                         type="number"
                         class="form-control"
@@ -81,10 +81,10 @@
                         :id="'updates_'+item.key"
                         v-model="item.quantity"
                         min="0"
-                        aria-label="Item_quantity"
+                        aria-label="{{ 'cart.general.item_quantity' | t }}"
                       >
                     </td>
-                    <td data-label="Total">${ total_price(item) | money }</td>
+                    <td data-label="{{ 'cart.label.total' | t }}">${ total_price(item) | money }</td>
                   </tr>
                 </template>
               </template>
@@ -98,6 +98,7 @@
               <label class="form-label" for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
               <textarea class="form-control" name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
             {% endif %}
+
             <p>{{ 'cart.general.subtotal' | t }}</p>
             <p v-if="cart">${ cart_total_price | money }</p>
             {% if cart.total_discounts > 0 %}
@@ -106,8 +107,7 @@
                 {{ cart.total_discounts | money }}
               </p>
             {% endif %}
-            <p>{{ 'cart.general.checkout' | t }}</p>
-
+            <p>{{ 'cart.general.shipping_at_checkout' | t }}</p>
             <input
               type="button"
               @click="updateCart"
@@ -148,3 +148,4 @@
     </div>
   {% endif %}
 </div>
+
