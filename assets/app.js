@@ -20351,11 +20351,8 @@ if (document.querySelector('.cart-form')) {
       cart: function cart() {
         return this.cartData[0];
       },
-      totalPrice: function totalPrice() {
-        if (!this.cart || !this.cart.items) return 0;
-        return this.cart.items.reduce(function (total, item) {
-          return total + item.price * item.quantity;
-        }, 0);
+      total_Price: function total_Price(item) {
+        return item.price * item.quantity;
       }
     },
     created: function created() {
