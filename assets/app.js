@@ -20549,46 +20549,46 @@ if (document.querySelector('.shopify-product-form')) {
       addToCart: function addToCart() {
         var _this = this;
         axios.post('/cart/add.js', this.form).then(function (response) {
-          // Add data to mini cart object
+          // 将数据添加到迷你购物车对象
           var found = store.state.cartData[0].items.find(function (product) {
             return product.variant_id == response.data.variant_id;
           });
           if (found) {
             found.quantity += parseInt(_this.form.quantity); // 确保拼写正确
           } else {
-            // Add item at the start of array
+            // 将项目添加到数组的开头
             store.state.cartData[0].items.unshift(response.data);
           }
 
-          // Open mini cart
+          // 打开迷你购物车
           $('.mini-cart').dropdown('show');
           _this.closeMiniCart();
 
-          // Display success notification
+          // 显示成功提示
           new Noty({
             type: 'success',
-            // 成功提示
+            // 成功提示类型
             timeout: 3000,
-            // 3秒后自动关闭
+            // 提示3秒后关闭
             layout: 'topRight',
-            // 显示位置：右上角
-            text: 'Product added to cart!' // 成功信息
+            // 提示显示在右上角
+            text: 'Product added to cart!' // 提示信息
           }).show();
           console.log('Product added successfully.');
         })["catch"](function (error) {
           console.error('Error adding to cart:', error);
-          // Display error notification
+          // 显示错误提示
           new Noty({
             type: 'error',
-            // 错误提示
+            // 错误提示类型
             layout: 'topRight',
-            // 显示位置：右上角
+            // 提示显示在右上角
             text: 'Error adding product to cart' // 错误信息
           }).show();
         });
       },
       closeMiniCart: function closeMiniCart() {
-        // Fix for Bootstrap dropdown JavaScript opening and closing
+        // 解决 Bootstrap 下拉菜单的打开和关闭问题
         $('.mini-cart').addClass('show');
         $('.mini-cart.dropdown-menu').addClass('show');
         $('.mini-cart.dropdown-item-text').removeClass('show');
