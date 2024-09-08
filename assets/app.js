@@ -20348,9 +20348,6 @@ if (document.querySelector('.cart-form')) {
       };
     },
     computed: {
-      total_price: function total_price(item) {
-        return item.price * item.quantity;
-      },
       cart: function cart() {
         return this.cartData[0];
       }
@@ -20361,7 +20358,7 @@ if (document.querySelector('.cart-form')) {
     },
     mounted: function mounted() {
       console.log(this.cartData);
-      // this.getCart();
+      this.getCart();
     },
     methods: {
       getCart: function getCart() {
