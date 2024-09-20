@@ -20407,12 +20407,12 @@ if (document.querySelector('.cart-form')) {
           }).show();
         });
       }
-    },
-    filters: {
-      money: function money(value) {
-        return "$".concat((value / 100).toFixed(2)); // 确保是数字格式
-      }
     }
+    // filters: {
+    //   money(value) {
+    //     return `$${(value / 100).toFixed(2)}`; // 确保是数字格式
+    //   },
+    // },
   });
 }
 
