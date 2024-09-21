@@ -10,8 +10,7 @@
 {
   "general": {
     "accessibility": {
-      "skip_to_content": "Skip to content",
-      "skip_to_text": "skip_to_text"
+      "skip_to_content": "Skip to content"
     },
     "meta": {
       "tags": "Tagged \"{{ tags }}\"",
