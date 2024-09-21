@@ -60,16 +60,12 @@
               <div class="product-item">
                 {% if product.featured_image != blank %}
                   <a href="{{ product.url | within: collection }}">
-                    <a href="{{ product.url | within: collection }}">
-                      <img
-                        src="{{ product.featured_image | img_url: '300x' }}"
-                        data-src="{{ product.featured_image | img_url: '500x500', crop: 'center' }}"
-                        alt=""
-                        width="300"
-                        height="300"
-                        class="img-fluid lazyload"
-                      >
-                    </a>
+                    <img
+                      src="{{ product.featured_image | img_url:'300x'}}"
+                      data-src="{{ product.featured_image |     img_url:'500x500', crop:'center' }}"
+                      alt=""
+                      class="img-fluid lazyload"
+                    >
                   </a>
                 {% endif %}
                 <p>
