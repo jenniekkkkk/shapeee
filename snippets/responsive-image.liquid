@@ -79,6 +79,7 @@
     id="Image-{{ image.id }}-{{ responsive_image_counter }}"
     class="responsive-image__image {{ image_class }}"
     src="{{ image|img_url }}"
+    data-src="{{img_url:'300'}}"
     alt="{{ image.alt | escape }}"
     loading="lazy"
     tabindex="-1"
