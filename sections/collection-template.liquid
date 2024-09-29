@@ -63,10 +63,10 @@
                     <img
                       src="{{ product.featured_image | img_url:'300x'}}"
                       data-src="{{ product.featured_image |     img_url:'500x500', crop:'center' }}"
-                      loading="lazy"
-                      alt=""
-                      height=""
-                      width=""
+
+                      alt="{{ product.title }}"
+                      height="500"
+                      width="500"
                       class="img-fluid lazyload"
                     >
                   </a>
